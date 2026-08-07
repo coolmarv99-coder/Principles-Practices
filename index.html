@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLDV-03 Week 1 Interactive Reading Guide</title>
+<style>
+:root{
+  --navy:#173f63;--teal:#287a78;--ink:#172033;--muted:#5c6678;
+  --gold:#e1ad35;--border:#d8deea;--shadow:0 8px 24px rgba(22,32,51,.09);
+  --green:#287a51;--soft:#f5f7fb
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.55}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:var(--navy)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #4e9cf5;outline-offset:2px}
+.sitebar{background:var(--navy);color:#fff;padding:14px 20px}
+.sitebar-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700}
+.logo{width:46px;height:46px;border:2px solid #fff;border-radius:12px;display:grid;place-items:center}
+.small{font-size:.9rem;color:var(--muted)}
+.sitebar .small{color:#d9e6f5}
+main{max-width:1180px;margin:0 auto;padding:28px 18px 60px}
+.hero{display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:.1em 0}
+.subtitle{font-size:1.08rem;margin:0;color:#39445a}
+.progress-wrap{min-width:260px}
+.progress-line{height:10px;background:#d9dee7;border-radius:999px;overflow:hidden}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),#52a981);transition:width .35s ease}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}
+.step{background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 12px;text-align:center;font-weight:650;color:#667085;text-decoration:none}
+.step.active{background:#eaf5f3;color:#145854;border-color:#a7d2cf}
+.step.done{background:#eaf7f1;color:#176847}
+.card{background:#fff;border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.story{display:grid;grid-template-columns:minmax(300px,44%) 1fr;background:linear-gradient(110deg,#fff5da,#fffaf1)}
+.story img{width:100%;height:100%;min-height:400px;object-fit:cover}
+.story-copy{padding:30px}
+.kicker{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#7b5a13}
+h2{font-size:1.55rem;margin:.25em 0 .5em}
+h3{font-size:1.18rem;margin:0 0 12px}
+.story-note{background:rgba(255,255,255,.82);border-left:5px solid var(--gold);padding:14px 16px;border-radius:12px;margin-top:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.activity{padding:24px}
+.question{font-weight:700;margin-bottom:14px}
+.options{display:grid;gap:10px}
+.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #ccd3df;border-radius:13px;padding:12px;background:#fff}
+.option.correct{border-color:#5cae7b;background:#ecf9f0}
+.option.incorrect{border-color:#d98f8f;background:#fff1f1}
+.feedback{display:none;margin-top:14px;padding:13px 15px;border-radius:13px;background:#edf9f1;border:1px solid #acd7b9}
+.feedback.show{display:block}
+.match-row{display:grid;grid-template-columns:180px 1fr;gap:12px;align-items:center;margin:10px 0}
+.term{font-weight:750;background:#edf5ff;border:1px solid #a7c5ef;border-radius:10px;padding:10px}
+select{width:100%;padding:10px;border:1px solid #bac4d3;border-radius:10px;background:#fff}
+.btn{border:none;border-radius:12px;padding:12px 18px;font-weight:750;background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(40,122,81,.2)}
+.btn.secondary{background:#fff;color:var(--navy);border:1px solid #aeb9c8;box-shadow:none}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.resource-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:18px 0;padding:16px 18px;border:1px solid #b9c9dc;border-radius:18px;background:#eef6ff}
+.resource-bar p{margin:0}
+.resource-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:12px;padding:11px 15px;font-weight:750;background:#fff;color:var(--navy);border:1px solid #9fb0c5}
+.resource-link:hover{text-decoration:underline;background:#f7fbff}
+.concept-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.concept{padding:18px;border-radius:18px;border:1px solid var(--border);background:#fff}
+.concept strong{display:block;margin-bottom:6px}
+.reflection{margin-top:18px;padding:24px;background:linear-gradient(135deg,#f1fbf4,#fff)}
+textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px;padding:14px;resize:vertical}
+.compare-panel{display:none;margin-top:18px}
+.compare-panel.show{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.compare-box{border-radius:18px;padding:18px;border:1px solid var(--border)}
+.compare-box:nth-child(1){background:#fff8df}
+.compare-box:nth-child(2){background:#edf9f5}
+.compare-box:nth-child(3){background:#f4efff}
+.complete{display:none;margin-top:18px;padding:20px;background:#eaf8f1;border:1px solid #a9d9bf;border-radius:18px;align-items:center;justify-content:space-between;gap:14px}
+.complete.show{display:flex}
+.badge{display:inline-block;background:#e8f5ee;color:#176847;border-radius:999px;padding:5px 10px;font-weight:800;font-size:.82rem}
+.section-label{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800;color:var(--teal)}
+.checklist{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.fact{border:1px solid var(--border);border-radius:14px;padding:14px;background:#fff}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){
+  .story,.grid2{grid-template-columns:1fr}.story img{min-height:240px;max-height:390px}
+  .concept-strip,.compare-panel.show,.checklist{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+  main{padding:18px 12px 40px}.sitebar{padding:10px 12px}.steps{grid-template-columns:1fr}
+  .step{text-align:left}.match-row{grid-template-columns:1fr}.activity,.reflection,.story-copy{padding:18px}
+  .complete.show{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress-fill{transition:none}}
+</style>
+</head>
+<body>
+<header class="sitebar">
+  <div class="sitebar-inner">
+    <div class="brand"><div class="logo" aria-hidden="true">03</div><div>Principles &amp; Practices<div class="small">Interactive Reading Guide</div></div></div>
+    <div class="small">Week 1 • Julian Chapter 1</div>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="page-title">
+  <div>
+    <span class="badge">Low-stakes self-check</span>
+    <span class="badge">Recognize • Connect • Apply</span>
+    <h1 id="page-title">What Kind of Teacher Are You Becoming?</h1>
+    <p class="subtitle">Personal qualities, professionalism, program settings, historical roots, public support, and current trends</p>
+  </div>
+  <div class="progress-wrap" aria-label="Guide progress">
+    <div style="display:flex;justify-content:space-between;margin-bottom:7px"><strong>Overall progress</strong><span id="progressText">0%</span></div>
+    <div class="progress-line" role="progressbar" aria-label="Overall progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+</section>
+
+<nav class="steps" aria-label="Guide sections">
+  <a class="step active" href="#story">1. Vignette</a>
+  <a class="step" href="#explore">2. Explore</a>
+  <a class="step" href="#check">3. Self-Check</a>
+  <a class="step" href="#reflect">4. Reflect</a>
+</nav>
+
+<aside class="resource-bar" aria-label="Julian chapter resource">
+  <p><strong>Keep Chapter 1 nearby.</strong><br><span class="small">This guide supports the reading; it does not replace it.</span></p>
+  <a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/Introduction_to_Early_Childhood_Education_1.1e_(Julian)/01%3A_An_Overview_of_the_Field_of_Early_Childhood_Education" target="_blank" rel="noopener noreferrer">📖 Open Julian Chapter 1</a>
+</aside>
+
+<aside class="resource-bar" aria-label="Low-stakes response notice">
+  <p><strong>Practice freely.</strong><br><span class="small">Plan for about 12–18 minutes. Responses remain on this page and are not saved, graded, or submitted to Canvas.</span></p>
+</aside>
+
+<section id="story" class="card story">
+  <img src="images/cldv03-week1-vignette.png" alt="Three diverse college students discuss early childhood education around a table with notebooks, textbooks, and a laptop">
+  <div class="story-copy">
+    <div class="kicker">Opening vignette</div>
+    <h2>“So… What Kind of Teacher Are You Becoming?”</h2>
+    <p><strong>Maya:</strong> “I thought this class would mostly be about activities for children—like art, circle time, and storybooks. But this chapter is already asking who I am as a person.”</p>
+    <p><strong>Jordan:</strong> “That sounds intense for Week 1. I was hoping for crayons before self-reflection.”</p>
+    <p><strong>Aaliyah:</strong> “Maybe that’s the point. Working with young children isn’t just about liking kids. It’s also about our values, our patience, our biases, how we work with families, and whether we understand this as a profession.”</p>
+    <p><strong>Maya:</strong> “So the question isn’t just, ‘Do I want to teach?’ It’s, ‘What kind of early learning professional am I becoming?’”</p>
+    <div class="story-note"><strong>Think first:</strong> Which personal quality, value, or attitude matters most for someone working with young children—and why?</div>
+    <div class="btn-row"><button class="btn" id="storyDone" type="button">I’ve considered the vignette</button></div>
+  </div>
+</section>
+
+<section id="explore" class="grid2">
+  <article class="card activity">
+    <div class="section-label">Professional identity</div>
+    <h3>🔎 Choose the strongest response</h3>
+    <p class="question">Which statement best reflects Chapter 1’s view of becoming an early childhood professional?</p>
+    <div class="options">
+      <label class="option"><input type="radio" name="decision" value="0"> Loving children is the main qualification; technical knowledge can come later.</label>
+      <label class="option"><input type="radio" name="decision" value="1"> Personal qualities matter, but professional knowledge, ethical conduct, reflection, and responsibility are also essential.</label>
+      <label class="option"><input type="radio" name="decision" value="2"> Professionalism mainly means following a center’s dress code and schedule.</label>
+      <label class="option"><input type="radio" name="decision" value="3"> A teacher should keep personal experiences and values completely separate from classroom practice.</label>
+    </div>
+    <div class="btn-row"><button class="btn" id="decisionCheck" type="button">Check my thinking</button></div>
+    <div class="feedback" id="decisionFeedback" aria-live="polite"></div>
+  </article>
+
+  <article class="card activity">
+    <div class="section-label">Key ideas</div>
+    <h3>🧩 Match it up</h3>
+    <p>Match each term with its best Chapter 1 meaning.</p>
+    <div class="match-row"><div class="term">Temperament</div><select data-answer="b"><option value="">Choose…</option><option value="a">A shared guide for professional ethical decisions</option><option value="b">Characteristic ways a person responds to people and situations</option><option value="c">Action taken to promote children, families, or the profession</option><option value="d">Beliefs or principles that shape priorities and choices</option></select></div>
+    <div class="match-row"><div class="term">Values</div><select data-answer="d"><option value="">Choose…</option><option value="a">A shared guide for professional ethical decisions</option><option value="b">Characteristic ways a person responds to people and situations</option><option value="c">Action taken to promote children, families, or the profession</option><option value="d">Beliefs or principles that shape priorities and choices</option></select></div>
+    <div class="match-row"><div class="term">Code of ethics</div><select data-answer="a"><option value="">Choose…</option><option value="a">A shared guide for professional ethical decisions</option><option value="b">Characteristic ways a person responds to people and situations</option><option value="c">Action taken to promote children, families, or the profession</option><option value="d">Beliefs or principles that shape priorities and choices</option></select></div>
+    <div class="match-row"><div class="term">Advocacy</div><select data-answer="c"><option value="">Choose…</option><option value="a">A shared guide for professional ethical decisions</option><option value="b">Characteristic ways a person responds to people and situations</option><option value="c">Action taken to promote children, families, or the profession</option><option value="d">Beliefs or principles that shape priorities and choices</option></select></div>
+    <div class="btn-row"><button class="btn" id="checkMatch" type="button">Check matches</button><button class="btn secondary" id="resetMatch" type="button">Reset</button></div>
+    <div class="feedback" id="matchFeedback" aria-live="polite"></div>
+  </article>
+</section>
+
+<section class="concept-strip" aria-label="Chapter 1 anchor concepts">
+  <div class="concept"><strong>👤 The teacher is a person.</strong>Life experiences, values, temperament, identity, and bias influence classroom decisions and relationships.</div>
+  <div class="concept"><strong>🧭 The teacher is a professional.</strong>Knowledge, ethics, dependable conduct, reflection, family partnership, and advocacy extend beyond good intentions.</div>
+  <div class="concept"><strong>🏫 The field is diverse.</strong>Programs differ in purpose, setting, ages served, funding, regulation, schedules, and teacher qualifications.</div>
+</section>
+
+<section id="check" class="grid2">
+  <article class="card activity">
+    <div class="section-label">Program settings</div>
+    <h3>🏠 Which setting fits?</h3>
+    <p class="question">A caregiver provides licensed care to a small group of children in the caregiver’s own residence. Which program type best fits?</p>
+    <div class="options">
+      <label class="option"><input type="radio" name="setting" value="0"> Licensed childcare center</label>
+      <label class="option"><input type="radio" name="setting" value="1"> Family childcare home</label>
+      <label class="option"><input type="radio" name="setting" value="2"> Elementary school</label>
+      <label class="option"><input type="radio" name="setting" value="3"> Head Start classroom by definition</label>
+    </div>
+    <div class="btn-row"><button class="btn" id="settingCheck" type="button">Check answer</button></div>
+    <div class="feedback" id="settingFeedback" aria-live="polite"></div>
+  </article>
+
+  <article class="card activity">
+    <div class="section-label">History and public support</div>
+    <h3>🕰️ Connect past and present</h3>
+    <p class="question">Which statement best represents the chapter’s historical perspective?</p>
+    <div class="options">
+      <label class="option"><input type="radio" name="history" value="0"> Early childhood programs developed independently from social and economic conditions.</label>
+      <label class="option"><input type="radio" name="history" value="1"> Current programs reflect philosophical ideas, changing family and workforce needs, research, reform, and public policy.</label>
+      <label class="option"><input type="radio" name="history" value="2"> Government involvement began only after the year 2000.</label>
+      <label class="option"><input type="radio" name="history" value="3"> Historical study matters mainly for memorizing names and dates.</label>
+    </div>
+    <div class="btn-row"><button class="btn" id="historyCheck" type="button">Check answer</button></div>
+    <div class="feedback" id="historyFeedback" aria-live="polite"></div>
+  </article>
+</section>
+
+<section class="card activity" style="margin-top:18px">
+  <div class="section-label">Final self-check</div>
+  <h3>Check your understanding</h3>
+  <p class="question">Which statement best integrates the main ideas of Julian Chapter 1?</p>
+  <div class="options">
+    <label class="option"><input type="radio" name="check" value="0"> Early childhood education is mainly a collection of activities used in preschool classrooms.</label>
+    <label class="option"><input type="radio" name="check" value="1"> The field is shaped by teachers as people and professionals, varied program structures, historical developments, public systems, and changing social needs.</label>
+    <label class="option"><input type="radio" name="check" value="2"> The field can be understood without considering families, culture, policy, or history.</label>
+    <label class="option"><input type="radio" name="check" value="3"> All early learning settings require identical qualifications, funding, and regulations.</label>
+  </div>
+  <div class="btn-row"><button class="btn" id="checkUnderstanding" type="button">Check my thinking</button></div>
+  <div class="feedback" id="checkFeedback" aria-live="polite"></div>
+</section>
+
+<aside class="resource-bar" aria-label="Chapter review reminder">
+  <p><strong>Need a quick review?</strong><br><span class="small">Revisit Sections 1.2–1.7 before completing the reflection.</span></p>
+  <a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/Introduction_to_Early_Childhood_Education_1.1e_(Julian)/01%3A_An_Overview_of_the_Field_of_Early_Childhood_Education" target="_blank" rel="noopener noreferrer">📖 Return to Chapter 1</a>
+</aside>
+
+<section id="reflect" class="card reflection">
+  <div class="kicker">Final reflection</div>
+  <h2>Complete this sentence</h2>
+  <p><strong>One important idea I am taking from Chapter 1 is that becoming an early childhood professional…</strong></p>
+  <label for="reflectionText" class="sr-only">Your reflection</label>
+  <textarea id="reflectionText" placeholder="Type a few words or sentences. This response remains on this page and is not graded or submitted."></textarea>
+  <div class="btn-row"><button class="btn" id="compareBtn" type="button">Compare My Thinking</button></div>
+  <div class="compare-panel" id="comparePanel" aria-live="polite">
+    <div class="compare-box"><h3>The chapter emphasizes…</h3><p>Teachers bring their personal histories, values, temperament, knowledge, and ethical commitments into relationships and decisions.</p></div>
+    <div class="compare-box"><h3>Consider…</h3><p>Did your response move beyond “liking children” to include professional preparation, responsibility, reflection, families, and advocacy?</p></div>
+    <div class="compare-box"><h3>Add to your thinking…</h3><p>The profession is also shaped by varied settings, historical forces, public funding, regulation, equity, and changing societal needs.</p></div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox">
+  <div><strong>🌟 Guide complete!</strong><br><span class="small">You considered the vignette, tested key ideas, matched concepts, and connected the field’s past with its present.</span></div>
+  <button class="btn" id="restartBtn" type="button">Restart guide</button>
+</div>
+</main>
+
+<script>
+const state={story:false,decision:false,match:false,setting:false,history:false,check:false,reflect:false};
+const steps=[...document.querySelectorAll('.step')];
+
+function updateProgress(){
+  const done=Object.values(state).filter(Boolean).length;
+  const pct=Math.round(done/7*100);
+  const bar=document.querySelector('.progress-line');
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressText').textContent=pct+'%';
+  bar.setAttribute('aria-valuenow',pct);
+  steps.forEach((s,i)=>{
+    s.classList.toggle('done',i<Math.min(4,Math.ceil(done*4/7)));
+    s.classList.toggle('active',i===Math.min(3,Math.floor(done*4/7)));
+  });
+  if(done===7)document.getElementById('completeBox').classList.add('show');
+}
+function show(box,html){box.innerHTML=html;box.classList.add('show')}
+
+document.getElementById('storyDone').addEventListener('click',()=>{
+  state.story=true;updateProgress();document.getElementById('explore').scrollIntoView({behavior:'smooth'});
+});
+
+document.getElementById('decisionCheck').addEventListener('click',()=>{
+  const c=document.querySelector('input[name=decision]:checked'),f=document.getElementById('decisionFeedback');
+  if(!c)return show(f,'⚠️ Choose an answer first.');
+  const ok=Number(c.value)===1;
+  show(f,ok?'✅ <strong>Exactly.</strong> Personal qualities matter, but professionalism also requires knowledge, reflection, ethics, responsibility, and constructive relationships.':'↻ <strong>Try again.</strong> Look for the response that combines personal qualities with professional knowledge and responsibility.');
+  if(ok){state.decision=true;updateProgress()}
+});
+
+document.getElementById('checkMatch').addEventListener('click',()=>{
+  const ss=[...document.querySelectorAll('.match-row select')],f=document.getElementById('matchFeedback');
+  if(!ss.every(s=>s.value))return show(f,'⚠️ Complete all four matches first.');
+  const n=ss.filter(s=>s.value===s.dataset.answer).length;
+  show(f,n===4?'✅ <strong>Nice work!</strong> All four concepts are matched correctly.':'↻ You matched <strong>'+n+' of 4</strong> correctly. Recheck the concepts and try again.');
+  if(n===4){state.match=true;updateProgress()}
+});
+document.getElementById('resetMatch').addEventListener('click',()=>{
+  document.querySelectorAll('.match-row select').forEach(s=>s.value='');
+  document.getElementById('matchFeedback').classList.remove('show');
+});
+
+document.getElementById('settingCheck').addEventListener('click',()=>{
+  const c=document.querySelector('input[name=setting]:checked'),f=document.getElementById('settingFeedback');
+  if(!c)return show(f,'⚠️ Choose an answer first.');
+  const ok=Number(c.value)===1;
+  show(f,ok?'✅ <strong>Correct.</strong> Family childcare is provided in a residence and differs from center-based care in setting, scale, and regulation.':'↻ <strong>Try again.</strong> Focus on the detail that care occurs in the caregiver’s residence.');
+  if(ok){state.setting=true;updateProgress()}
+});
+
+document.getElementById('historyCheck').addEventListener('click',()=>{
+  const c=document.querySelector('input[name=history]:checked'),f=document.getElementById('historyFeedback');
+  if(!c)return show(f,'⚠️ Choose an answer first.');
+  const ok=Number(c.value)===1;
+  show(f,ok?'✅ <strong>Correct.</strong> The field developed through interacting ideas, research, family and workforce needs, reform movements, and public policy.':'↻ <strong>Try again.</strong> Choose the response that connects educational ideas with social conditions and public action.');
+  if(ok){state.history=true;updateProgress()}
+});
+
+document.getElementById('checkUnderstanding').addEventListener('click',()=>{
+  const c=document.querySelector('input[name=check]:checked'),f=document.getElementById('checkFeedback');
+  if(!c)return show(f,'⚠️ Choose an answer first, then check your thinking.');
+  const ok=Number(c.value)===1;
+  show(f,ok?'✅ <strong>Exactly.</strong> Chapter 1 presents early childhood education as a complex field shaped by people, professional commitments, program structures, history, policy, and society.':'↻ <strong>Try again.</strong> Look for the answer that integrates personal, professional, structural, historical, and social dimensions.');
+  if(ok){state.check=true;updateProgress()}
+});
+
+document.getElementById('compareBtn').addEventListener('click',()=>{
+  document.getElementById('comparePanel').classList.add('show');
+  state.reflect=true;updateProgress();
+  document.getElementById('comparePanel').scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+
+document.getElementById('restartBtn').addEventListener('click',()=>location.reload());
+updateProgress();
+</script>
+</body>
+</html>

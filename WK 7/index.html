@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLDV-03 Week 7 Interactive Reading Guide</title>
+<style>
+:root{--navy:#173f63;--teal:#287a78;--ink:#172033;--muted:#5c6678;--gold:#e1ad35;--border:#d8deea;--shadow:0 8px 24px rgba(22,32,51,.09);--green:#287a51;--soft:#f5f7fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.55}
+button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:var(--navy)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #4e9cf5;outline-offset:2px}
+.sitebar{background:var(--navy);color:#fff;padding:14px 20px}.sitebar-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:700}.logo{width:46px;height:46px;border:2px solid #fff;border-radius:12px;display:grid;place-items:center}.small{font-size:.9rem;color:var(--muted)}.sitebar .small{color:#d9e6f5}
+main{max-width:1180px;margin:0 auto;padding:28px 18px 60px}.hero{display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap}h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:.1em 0}.subtitle{font-size:1.08rem;margin:0;color:#39445a}
+.progress-wrap{min-width:260px}.progress-line{height:10px;background:#d9dee7;border-radius:999px;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),#52a981);transition:width .35s ease}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}.step{background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 12px;text-align:center;font-weight:650;color:#667085;text-decoration:none}.step.active{background:#eaf5f3;color:#145854;border-color:#a7d2cf}.step.done{background:#eaf7f1;color:#176847}
+.card{background:#fff;border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.story{display:grid;grid-template-columns:minmax(300px,44%) 1fr;background:linear-gradient(110deg,#fff6ef,#fff)}.story img{width:100%;height:100%;min-height:430px;object-fit:cover}.story-copy{padding:30px}.kicker{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#7f4d2d}h2{font-size:1.55rem;margin:.25em 0 .5em}h3{font-size:1.18rem;margin:0 0 12px}.story-note{background:rgba(255,255,255,.88);border-left:5px solid var(--gold);padding:14px 16px;border-radius:12px;margin-top:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.activity{padding:24px}.question{font-weight:700;margin-bottom:14px}.options{display:grid;gap:10px}.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #ccd3df;border-radius:13px;padding:12px;background:#fff}.feedback{display:none;margin-top:14px;padding:13px 15px;border-radius:13px;background:#edf9f1;border:1px solid #acd7b9}.feedback.show{display:block}
+.match-row{display:grid;grid-template-columns:190px 1fr;gap:12px;align-items:center;margin:10px 0}.term{font-weight:750;background:#edf5ff;border:1px solid #a7c5ef;border-radius:10px;padding:10px}select{width:100%;padding:10px;border:1px solid #bac4d3;border-radius:10px;background:#fff}
+.btn{border:none;border-radius:12px;padding:12px 18px;font-weight:750;background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(40,122,81,.2)}.btn.secondary{background:#fff;color:var(--navy);border:1px solid #aeb9c8;box-shadow:none}.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.resource-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:18px 0;padding:16px 18px;border:1px solid #b9c9dc;border-radius:18px;background:#eef6ff}.resource-bar p{margin:0}.resource-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:12px;padding:11px 15px;font-weight:750;background:#fff;color:var(--navy);border:1px solid #9fb0c5}
+.concept-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.concept{padding:18px;border-radius:18px;border:1px solid var(--border);background:#fff}.concept strong{display:block;margin-bottom:6px}
+.reflection{margin-top:18px;padding:24px;background:linear-gradient(135deg,#f1fbf4,#fff)}textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px;padding:14px;resize:vertical}.compare-panel{display:none;margin-top:18px}.compare-panel.show{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.compare-box{border-radius:18px;padding:18px;border:1px solid var(--border)}.compare-box:nth-child(1){background:#fff8df}.compare-box:nth-child(2){background:#edf9f5}.compare-box:nth-child(3){background:#f4efff}
+.complete{display:none;margin-top:18px;padding:20px;background:#eaf8f1;border:1px solid #a9d9bf;border-radius:18px;align-items:center;justify-content:space-between;gap:14px}.complete.show{display:flex}.badge{display:inline-block;background:#e8f5ee;color:#176847;border-radius:999px;padding:5px 10px;font-weight:800;font-size:.82rem}.section-label{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800;color:var(--teal)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){.story,.grid2{grid-template-columns:1fr}.story img{min-height:240px;max-height:390px}.concept-strip,.compare-panel.show{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}@media(max-width:520px){main{padding:18px 12px 40px}.sitebar{padding:10px 12px}.steps{grid-template-columns:1fr}.step{text-align:left}.match-row{grid-template-columns:1fr}.activity,.reflection,.story-copy{padding:18px}.complete.show{align-items:flex-start;flex-direction:column}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress-fill{transition:none}}
+</style>
+</head>
+<body>
+<header class="sitebar"><div class="sitebar-inner"><div class="brand"><div class="logo" aria-hidden="true">03</div><div>Principles &amp; Practices<div class="small">Interactive Reading Guide</div></div></div><div class="small">Week 7 • Stephens Chapter 5</div></div></header>
+<main>
+<section class="hero" aria-labelledby="page-title"><div><span class="badge">Low-stakes self-check</span> <span class="badge">Observe • Interpret • Support</span><h1 id="page-title">Not a Race, Not a Checklist</h1><p class="subtitle">The whole child, developmental stages, culture, DAP, and individual growth</p></div><div class="progress-wrap"><div style="display:flex;justify-content:space-between;margin-bottom:7px"><strong>Overall progress</strong><span id="progressText">0%</span></div><div class="progress-line" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div></div></section>
+<nav class="steps"><a class="step active" href="#story">1. Vignette</a><a class="step" href="#explore">2. Domains</a><a class="step" href="#support">3. DAP</a><a class="step" href="#reflect">4. Reflect</a></nav>
+<aside class="resource-bar"><p><strong>Keep Stephens Chapter 5 nearby.</strong><br><span class="small">This guide supports the reading; it does not replace it.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/Principles_and_Practices_of_Teaching_Young_Children_(Stephens_et_al.)/05%3A_Developmental_Ages_and_Stages" target="_blank" rel="noopener noreferrer">📖 Open Stephens Chapter 5</a></aside>
+<aside class="resource-bar"><p><strong>Practice freely.</strong><br><span class="small">Plan for about 15–20 minutes. Responses remain on this page and are not saved, graded, or submitted.</span></p></aside>
+
+<section id="story" class="card story"><img src="images/cldv03-week7-vignette.png" alt="Three college students observe two preschool children drawing while discussing developmental differences in an early childhood classroom"><div class="story-copy"><div class="kicker">Opening vignette</div><h2>“Not a Race, Not a Checklist”</h2>
+<p><strong>Jordan:</strong> “So which child is more advanced?”</p>
+<p><strong>Aaliyah:</strong> “That might not be the best question.”</p>
+<p><strong>Maya:</strong> “Milestones can help us understand what is typical, but they are not supposed to make us compare children like they’re in a contest.”</p>
+<p><strong>Jordan:</strong> “So the point is not, ‘Who is ahead?’ It’s, ‘What does this child need next?’”</p>
+<p><strong>Aaliyah:</strong> “Exactly. And we have to look at the whole child—physical, cognitive, language, social, emotional, cultural, everything.”</p>
+<p><strong>Maya:</strong> “Maybe good teachers learn to see development without rushing children through it.”</p>
+<p><strong>Jordan:</strong> “So, not a race, not a checklist.”</p>
+<p><strong>Aaliyah:</strong> “More like a map—a map that helps us support each child’s next steps.”</p>
+<div class="story-note"><strong>Think first:</strong> How can teachers use developmental milestones as helpful guides without labeling, rushing, or unfairly comparing children?</div><div class="btn-row"><button class="btn" id="storyDone" type="button">I’ve considered the vignette</button></div></div></section>
+
+<section id="explore" class="grid2">
+<article class="card activity"><div class="section-label">The whole child</div><h3>🧠 Choose the strongest response</h3><p class="question">What does the chapter mean by “the whole child”?</p><div class="options">
+<label class="option"><input type="radio" name="whole" value="0"> Focusing on whichever domain is easiest to measure</label>
+<label class="option"><input type="radio" name="whole" value="1"> Considering physical, cognitive-language, social-emotional, spiritual, cultural, and individual aspects together</label>
+<label class="option"><input type="radio" name="whole" value="2"> Treating every developmental domain as unrelated to the others</label>
+<label class="option"><input type="radio" name="whole" value="3"> Expecting children of the same age to develop in identical ways</label></div><div class="btn-row"><button class="btn" id="wholeCheck" type="button">Check my thinking</button></div><div class="feedback" id="wholeFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Developmental domains</div><h3>🧩 Match it up</h3><p>Match each domain with the best example.</p>
+<div class="match-row"><div class="term">Physical</div><select data-answer="a"><option value="">Choose…</option><option value="a">Balance, fine-motor control, movement, and spatial awareness</option><option value="b">Memory, curiosity, language, problem-solving, and symbolic thought</option><option value="c">Self-concept, emotional regulation, empathy, and relationships</option><option value="d">Meaning, values, wonder, belonging, and connection to something larger</option></select></div>
+<div class="match-row"><div class="term">Cognitive-language</div><select data-answer="b"><option value="">Choose…</option><option value="a">Balance, fine-motor control, movement, and spatial awareness</option><option value="b">Memory, curiosity, language, problem-solving, and symbolic thought</option><option value="c">Self-concept, emotional regulation, empathy, and relationships</option><option value="d">Meaning, values, wonder, belonging, and connection to something larger</option></select></div>
+<div class="match-row"><div class="term">Social-emotional</div><select data-answer="c"><option value="">Choose…</option><option value="a">Balance, fine-motor control, movement, and spatial awareness</option><option value="b">Memory, curiosity, language, problem-solving, and symbolic thought</option><option value="c">Self-concept, emotional regulation, empathy, and relationships</option><option value="d">Meaning, values, wonder, belonging, and connection to something larger</option></select></div>
+<div class="match-row"><div class="term">Spiritual</div><select data-answer="d"><option value="">Choose…</option><option value="a">Balance, fine-motor control, movement, and spatial awareness</option><option value="b">Memory, curiosity, language, problem-solving, and symbolic thought</option><option value="c">Self-concept, emotional regulation, empathy, and relationships</option><option value="d">Meaning, values, wonder, belonging, and connection to something larger</option></select></div>
+<div class="btn-row"><button class="btn" id="checkMatch" type="button">Check matches</button><button class="btn secondary" id="resetMatch" type="button">Reset</button></div><div class="feedback" id="matchFeedback"></div></article>
+</section>
+
+<section class="concept-strip"><div class="concept"><strong>🗺️ Milestones are maps.</strong>They help educators notice patterns and plan next steps, but they should not become rigid labels or rankings.</div><div class="concept"><strong>🌈 Development is uneven.</strong>A child may show strength in one domain while still growing in another; domains also influence one another.</div><div class="concept"><strong>👥 Context matters.</strong>Individual differences, family knowledge, culture, language, community, and experience all shape development.</div></section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">Milestones</div><h3>📍 Guide, not verdict</h3><p class="question">Which use of developmental milestones is most appropriate?</p><div class="options">
+<label class="option"><input type="radio" name="milestones" value="0"> Rank children from most to least advanced.</label>
+<label class="option"><input type="radio" name="milestones" value="1"> Use them as reference points while observing the individual child over time and in context.</label>
+<label class="option"><input type="radio" name="milestones" value="2"> Assume a child who differs from the average has a problem.</label>
+<label class="option"><input type="radio" name="milestones" value="3"> Ignore family observations because school data is more objective.</label></div><div class="btn-row"><button class="btn" id="milestonesCheck" type="button">Check answer</button></div><div class="feedback" id="milestonesFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Individual variation</div><h3>🎨 Two drawings, two learners</h3><p class="question">Two same-age children create very different family drawings. What should the teacher do first?</p><div class="options">
+<label class="option"><input type="radio" name="drawings" value="0"> Decide which child is ahead and report the ranking.</label>
+<label class="option"><input type="radio" name="drawings" value="1"> Observe each child’s process, language, motor skills, ideas, and context before interpreting the work.</label>
+<label class="option"><input type="radio" name="drawings" value="2"> Correct both drawings so they match an adult model.</label>
+<label class="option"><input type="radio" name="drawings" value="3"> Use the drawings as a complete assessment of overall development.</label></div><div class="btn-row"><button class="btn" id="drawingsCheck" type="button">Check answer</button></div><div class="feedback" id="drawingsFeedback"></div></article>
+</section>
+
+<section id="support" class="grid2">
+<article class="card activity"><div class="section-label">Developmentally Appropriate Practice</div><h3>🧭 Three kinds of knowledge</h3><p class="question">Which choice includes the three core considerations of DAP described in the chapter?</p><div class="options">
+<label class="option"><input type="radio" name="dap" value="0"> Teacher preference, classroom convenience, and age</label>
+<label class="option"><input type="radio" name="dap" value="1"> Knowledge of child development, knowledge of the individual child, and knowledge of social and cultural context</label>
+<label class="option"><input type="radio" name="dap" value="2"> Test scores, behavior charts, and parent compliance</label>
+<label class="option"><input type="radio" name="dap" value="3"> One standardized curriculum, identical expectations, and fixed pacing</label></div><div class="btn-row"><button class="btn" id="dapCheck" type="button">Check answer</button></div><div class="feedback" id="dapFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Culture and identity</div><h3>🌍 Respecting context</h3><p class="question">Which educator action best supports cultural identity development?</p><div class="options">
+<label class="option"><input type="radio" name="culture" value="0"> Treat culture as a holiday topic rather than part of daily life.</label>
+<label class="option"><input type="radio" name="culture" value="1"> Learn from families, reflect children’s languages and traditions, challenge bias, and avoid stereotypes.</label>
+<label class="option"><input type="radio" name="culture" value="2"> Expect children to leave home practices outside the classroom.</label>
+<label class="option"><input type="radio" name="culture" value="3"> Use one child as the spokesperson for an entire cultural group.</label></div><div class="btn-row"><button class="btn" id="cultureCheck" type="button">Check answer</button></div><div class="feedback" id="cultureFeedback"></div></article>
+</section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">Behavioral considerations</div><h3>🌱 Expectations by stage</h3><p class="question">A toddler grabs a toy and cries when asked to wait. Which response best reflects developmental knowledge?</p><div class="options">
+<label class="option"><input type="radio" name="behavior" value="0"> Label the child selfish and remove all shared toys.</label>
+<label class="option"><input type="radio" name="behavior" value="1"> Recognize that impulse control is still developing, set a clear limit, and help the child practice waiting and communicating.</label>
+<label class="option"><input type="radio" name="behavior" value="2"> Expect the same self-control as an older school-age child.</label>
+<label class="option"><input type="radio" name="behavior" value="3"> Ignore the conflict because toddlers cannot learn social skills.</label></div><div class="btn-row"><button class="btn" id="behaviorCheck" type="button">Check answer</button></div><div class="feedback" id="behaviorFeedback"></div></article>
+
+<article class="card activity"><div class="section-label">Family partnership</div><h3>🤝 Sharing developmental information</h3><p class="question">How should a teacher discuss a developmental concern with a family?</p><div class="options">
+<label class="option"><input type="radio" name="family" value="0"> Present a label based on one classroom incident.</label>
+<label class="option"><input type="radio" name="family" value="1"> Share objective observations, listen to family knowledge, describe strengths, and collaborate on next steps.</label>
+<label class="option"><input type="radio" name="family" value="2"> Avoid the conversation until the child falls far behind.</label>
+<label class="option"><input type="radio" name="family" value="3"> Compare the child directly with classmates.</label></div><div class="btn-row"><button class="btn" id="familyCheck" type="button">Check answer</button></div><div class="feedback" id="familyFeedback"></div></article>
+</section>
+
+<section class="card activity" style="margin-top:18px"><div class="section-label">Final self-check</div><h3>Check your understanding</h3><p class="question">Which statement best integrates Stephens Chapter 5?</p><div class="options">
+<label class="option"><input type="radio" name="final" value="0"> Developmental knowledge is mainly useful for comparing children.</label>
+<label class="option"><input type="radio" name="final" value="1"> Developmental knowledge helps educators understand the whole child, set realistic expectations, plan responsively, honor culture and individuality, guide behavior, and partner with families.</label>
+<label class="option"><input type="radio" name="final" value="2"> Children of the same age should receive identical experiences.</label>
+<label class="option"><input type="radio" name="final" value="3"> DAP means lowering expectations whenever a child struggles.</label></div><div class="btn-row"><button class="btn" id="finalCheck" type="button">Check my thinking</button></div><div class="feedback" id="finalFeedback"></div></section>
+
+<aside class="resource-bar"><p><strong>Need a quick review?</strong><br><span class="small">Revisit Sections 5.2–5.6 before completing the reflection.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/Principles_and_Practices_of_Teaching_Young_Children_(Stephens_et_al.)/05%3A_Developmental_Ages_and_Stages" target="_blank" rel="noopener noreferrer">📖 Return to Stephens Chapter 5</a></aside>
+
+<section id="reflect" class="card reflection"><div class="kicker">Final reflection</div><h2>Complete this sentence</h2><p><strong>A developmental milestone is most useful when a teacher uses it to…</strong></p><label for="reflectionText" class="sr-only">Your reflection</label><textarea id="reflectionText" placeholder="Type a few words or sentences. This response remains on this page and is not graded or submitted."></textarea><div class="btn-row"><button class="btn" id="compareBtn" type="button">Compare My Thinking</button></div><div class="compare-panel" id="comparePanel"><div class="compare-box"><h3>The chapter emphasizes…</h3><p>Milestones help educators notice patterns, plan supports, and set realistic expectations—not rank children.</p></div><div class="compare-box"><h3>Consider…</h3><p>Did your response include observation over time, the individual child, family knowledge, culture, or multiple developmental domains?</p></div><div class="compare-box"><h3>Add to your thinking…</h3><p>The strongest use of developmental knowledge is responsive action: adjusting environments, interactions, guidance, curriculum, and communication.</p></div></div></section>
+
+<div class="complete" id="completeBox"><div><strong>🌟 Guide complete!</strong><br><span class="small">You examined the whole child, developmental domains, milestones, culture, DAP, behavior, and family partnership.</span></div><button class="btn" id="restartBtn" type="button">Restart guide</button></div>
+</main>
+<script>
+const state={story:false,whole:false,match:false,milestones:false,drawings:false,dap:false,culture:false,behavior:false,family:false,final:false,reflect:false};const steps=[...document.querySelectorAll('.step')];
+function updateProgress(){const done=Object.values(state).filter(Boolean).length;const pct=Math.round(done/11*100);const bar=document.querySelector('.progress-line');document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressText').textContent=pct+'%';bar.setAttribute('aria-valuenow',pct);steps.forEach((s,i)=>{s.classList.toggle('done',i<Math.min(4,Math.ceil(done*4/11)));s.classList.toggle('active',i===Math.min(3,Math.floor(done*4/11)))});if(done===11)document.getElementById('completeBox').classList.add('show')}
+function show(box,html){box.innerHTML=html;box.classList.add('show')}
+function radioCheck(name,correct,feedbackId,success,retry,key){const c=document.querySelector('input[name='+name+']:checked'),f=document.getElementById(feedbackId);if(!c)return show(f,'⚠️ Choose an answer first.');const ok=Number(c.value)===correct;show(f,ok?'✅ <strong>Correct.</strong> '+success:'↻ <strong>Try again.</strong> '+retry);if(ok){state[key]=true;updateProgress()}}
+document.getElementById('storyDone').addEventListener('click',()=>{state.story=true;updateProgress();document.getElementById('explore').scrollIntoView({behavior:'smooth'})});
+document.getElementById('wholeCheck').addEventListener('click',()=>radioCheck('whole',1,'wholeFeedback','The whole-child perspective considers interconnected domains, culture, and individuality.','Choose the response that integrates multiple areas rather than separating them.','whole'));
+document.getElementById('checkMatch').addEventListener('click',()=>{const ss=[...document.querySelectorAll('.match-row select')],f=document.getElementById('matchFeedback');if(!ss.every(s=>s.value))return show(f,'⚠️ Complete all four matches first.');const n=ss.filter(s=>s.value===s.dataset.answer).length;show(f,n===4?'✅ <strong>Nice work!</strong> All four domains are matched correctly.':'↻ You matched <strong>'+n+' of 4</strong> correctly. Recheck the examples and try again.');if(n===4){state.match=true;updateProgress()}});
+document.getElementById('resetMatch').addEventListener('click',()=>{document.querySelectorAll('.match-row select').forEach(s=>s.value='');document.getElementById('matchFeedback').classList.remove('show')});
+document.getElementById('milestonesCheck').addEventListener('click',()=>radioCheck('milestones',1,'milestonesFeedback','Milestones are best used as flexible reference points alongside ongoing observation and contextual knowledge.','Choose the response that guides support without ranking or labeling.','milestones'));
+document.getElementById('drawingsCheck').addEventListener('click',()=>radioCheck('drawings',1,'drawingsFeedback','The teacher should gather evidence about process, meaning, skills, and context before interpreting.','Start with observation rather than comparison.','drawings'));
+document.getElementById('dapCheck').addEventListener('click',()=>radioCheck('dap',1,'dapFeedback','DAP combines developmental knowledge, individual knowledge, and social-cultural context.','Choose the three-part framework from the chapter.','dap'));
+document.getElementById('cultureCheck').addEventListener('click',()=>radioCheck('culture',1,'cultureFeedback','Respectful practice learns from families, reflects children’s identities, and actively avoids bias and stereotypes.','Choose authentic, ongoing inclusion rather than token treatment.','culture'));
+document.getElementById('behaviorCheck').addEventListener('click',()=>radioCheck('behavior',1,'behaviorFeedback','Developmental guidance combines realistic expectations, clear limits, and supported skill-building.','Choose the response that teaches the emerging skill.','behavior'));
+document.getElementById('familyCheck').addEventListener('click',()=>radioCheck('family',1,'familyFeedback','Objective observations, strengths, listening, and collaboration support respectful family partnership.','Avoid labels, comparisons, and one-sided conclusions.','family'));
+document.getElementById('finalCheck').addEventListener('click',()=>radioCheck('final',1,'finalFeedback','The chapter connects developmental understanding with responsive practice across curriculum, behavior, identity, and relationships.','Choose the answer that uses developmental knowledge to support rather than compare.','final'));
+document.getElementById('compareBtn').addEventListener('click',()=>{document.getElementById('comparePanel').classList.add('show');state.reflect=true;updateProgress();document.getElementById('comparePanel').scrollIntoView({behavior:'smooth',block:'nearest'})});
+document.getElementById('restartBtn').addEventListener('click',()=>location.reload());updateProgress();
+</script>
+</body>
+</html>

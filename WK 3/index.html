@@ -148,7 +148,7 @@ textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px
     <h3>🔎 Choose the strongest response</h3>
     <p class="question">Why does Stephens Chapter 1 ask early childhood educators to study history?</p>
     <div class="options">
-      <label class="option"><input type="radio" name="why" value="0"> Mainly so educators can memorize names and dates for professional exams</label>
+      <label class="option"><input type="radio" name="why" value="0"> Mainly so educators can memorize influential people, dates, and movements for professional examinations and credential requirements</label>
       <label class="option"><input type="radio" name="why" value="1"> To understand how past ideas and social conditions shaped current beliefs, programs, and practices</label>
       <label class="option"><input type="radio" name="why" value="2"> Because contemporary research has replaced all earlier ideas</label>
       <label class="option"><input type="radio" name="why" value="3"> To prove that one historical approach is correct for every child</label>
@@ -161,10 +161,10 @@ textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px
     <div class="section-label">Influence categories</div>
     <h3>🧩 Match it up</h3>
     <p>Match each category with the best description.</p>
-    <div class="match-row"><div class="term">Philosophical</div><select data-answer="a"><option value="">Choose…</option><option value="a">Beliefs about children, human nature, knowledge, and education</option><option value="b">Ideas and practices associated with schools, teaching methods, and learning environments</option><option value="c">Knowledge contributed by medicine, psychology, biology, families, and other disciplines</option><option value="d">Recent thinkers, research, movements, and conditions affecting today’s field</option></select></div>
-    <div class="match-row"><div class="term">Educational</div><select data-answer="b"><option value="">Choose…</option><option value="a">Beliefs about children, human nature, knowledge, and education</option><option value="b">Ideas and practices associated with schools, teaching methods, and learning environments</option><option value="c">Knowledge contributed by medicine, psychology, biology, families, and other disciplines</option><option value="d">Recent thinkers, research, movements, and conditions affecting today’s field</option></select></div>
-    <div class="match-row"><div class="term">Interdisciplinary</div><select data-answer="c"><option value="">Choose…</option><option value="a">Beliefs about children, human nature, knowledge, and education</option><option value="b">Ideas and practices associated with schools, teaching methods, and learning environments</option><option value="c">Knowledge contributed by medicine, psychology, biology, families, and other disciplines</option><option value="d">Recent thinkers, research, movements, and conditions affecting today’s field</option></select></div>
-    <div class="match-row"><div class="term">Contemporary</div><select data-answer="d"><option value="">Choose…</option><option value="a">Beliefs about children, human nature, knowledge, and education</option><option value="b">Ideas and practices associated with schools, teaching methods, and learning environments</option><option value="c">Knowledge contributed by medicine, psychology, biology, families, and other disciplines</option><option value="d">Recent thinkers, research, movements, and conditions affecting today’s field</option></select></div>
+    <div class="match-row"><div class="term">Philosophical</div><select data-answer="a"><option value="">Choose…</option><option value="d">Recent thinkers, research, movements, and conditions affecting today’s field</option><option value="b">Ideas and practices associated with schools, teaching methods, and learning environments</option><option value="c">Knowledge contributed by medicine, psychology, biology, families, and other disciplines</option><option value="a">Beliefs about children, human nature, knowledge, and education</option></select></div>
+    <div class="match-row"><div class="term">Educational</div><select data-answer="b"><option value="">Choose…</option><option value="d">Recent thinkers, research, movements, and conditions affecting today’s field</option><option value="b">Ideas and practices associated with schools, teaching methods, and learning environments</option><option value="c">Knowledge contributed by medicine, psychology, biology, families, and other disciplines</option><option value="a">Beliefs about children, human nature, knowledge, and education</option></select></div>
+    <div class="match-row"><div class="term">Interdisciplinary</div><select data-answer="c"><option value="">Choose…</option><option value="d">Recent thinkers, research, movements, and conditions affecting today’s field</option><option value="b">Ideas and practices associated with schools, teaching methods, and learning environments</option><option value="c">Knowledge contributed by medicine, psychology, biology, families, and other disciplines</option><option value="a">Beliefs about children, human nature, knowledge, and education</option></select></div>
+    <div class="match-row"><div class="term">Contemporary</div><select data-answer="d"><option value="">Choose…</option><option value="d">Recent thinkers, research, movements, and conditions affecting today’s field</option><option value="b">Ideas and practices associated with schools, teaching methods, and learning environments</option><option value="c">Knowledge contributed by medicine, psychology, biology, families, and other disciplines</option><option value="a">Beliefs about children, human nature, knowledge, and education</option></select></div>
     <div class="btn-row"><button class="btn" id="checkMatch" type="button">Check matches</button><button class="btn secondary" id="resetMatch" type="button">Reset</button></div>
     <div class="feedback" id="matchFeedback" aria-live="polite"></div>
   </article>
@@ -184,8 +184,8 @@ textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px
     <div class="options">
       <label class="option"><input type="radio" name="terms" value="0"> Early childhood</label>
       <label class="option"><input type="radio" name="terms" value="1"> Child development</label>
-      <label class="option"><input type="radio" name="terms" value="2"> Early care and education</label>
-      <label class="option"><input type="radio" name="terms" value="3"> Educational influence</label>
+      <label class="option"><input type="radio" name="terms" value="2"> Educational influence</label>
+      <label class="option"><input type="radio" name="terms" value="3"> Early care and education</label>
     </div>
     <div class="btn-row"><button class="btn" id="termsCheck" type="button">Check answer</button></div>
     <div class="feedback" id="termsFeedback" aria-live="polite"></div>
@@ -196,8 +196,8 @@ textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px
     <h3>🔬 Evidence from many fields</h3>
     <p class="question">Why are interdisciplinary influences important to early childhood education?</p>
     <div class="options">
-      <label class="option"><input type="radio" name="inter" value="0"> They allow educators to rely on personal preference instead of evidence.</label>
-      <label class="option"><input type="radio" name="inter" value="1"> They combine knowledge from several fields to support environments, curriculum, guidance, and other practices.</label>
+      <label class="option"><input type="radio" name="inter" value="0"> They combine knowledge from several fields to support environments, curriculum, guidance, and other practices.</label>
+      <label class="option"><input type="radio" name="inter" value="1"> They allow educators to select whichever disciplinary viewpoint best matches personal preference rather than integrating evidence across fields.</label>
       <label class="option"><input type="radio" name="inter" value="2"> They prove that psychology is the only discipline that matters.</label>
       <label class="option"><input type="radio" name="inter" value="3"> They eliminate the need for teachers to observe children and families.</label>
     </div>
@@ -212,9 +212,9 @@ textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px
     <h3>🕰️ Past assumptions</h3>
     <p class="question">Which statement is most consistent with the chapter’s historical overview?</p>
     <div class="options">
-      <label class="option"><input type="radio" name="past" value="0"> Children have always been viewed as distinct developmental beings with universal access to education.</label>
-      <label class="option"><input type="radio" name="past" value="1"> Earlier societies often treated children as smaller adults, and education was not equally available to all social groups.</label>
-      <label class="option"><input type="radio" name="past" value="2"> Formal early childhood education developed without influence from religion, class, or family labor.</label>
+      <label class="option"><input type="radio" name="past" value="0"> Children have consistently been viewed as distinct developmental beings, although particular teaching methods and institutions changed over time.</label>
+      <label class="option"><input type="radio" name="past" value="1"> Formal early childhood education developed without influence from religion, class, or family labor.</label>
+      <label class="option"><input type="radio" name="past" value="2"> Earlier societies often treated children as smaller adults, and education was not equally available to all social groups.</label>
       <label class="option"><input type="radio" name="past" value="3"> Historical views of childhood have no effect on current practice.</label>
     </div>
     <div class="btn-row"><button class="btn" id="pastCheck" type="button">Check answer</button></div>
@@ -226,10 +226,10 @@ textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px
     <h3>📋 History meets professionalism</h3>
     <p class="question">Why does the chapter connect history with professional standards and competencies?</p>
     <div class="options">
-      <label class="option"><input type="radio" name="standards" value="0"> Because historical study is separate from ethical and professional responsibilities</label>
-      <label class="option"><input type="radio" name="standards" value="1"> Because understanding the field’s development helps educators interpret current responsibilities to children, families, and society</label>
-      <label class="option"><input type="radio" name="standards" value="2"> Because standards exist mainly to preserve every past practice unchanged</label>
-      <label class="option"><input type="radio" name="standards" value="3"> Because only historians need professional competencies</label>
+      <label class="option"><input type="radio" name="standards" value="0"> Because historical study documents earlier programs but remains largely separate from educators’ present ethical and professional responsibilities</label>
+      <label class="option"><input type="radio" name="standards" value="1"> Because standards exist mainly to preserve every past practice unchanged</label>
+      <label class="option"><input type="radio" name="standards" value="2"> Because only historians need professional competencies</label>
+      <label class="option"><input type="radio" name="standards" value="3"> Because understanding the field’s development helps educators interpret current responsibilities to children, families, and society</label>
     </div>
     <div class="btn-row"><button class="btn" id="standardsCheck" type="button">Check answer</button></div>
     <div class="feedback" id="standardsFeedback" aria-live="polite"></div>
@@ -241,7 +241,7 @@ textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px
   <h3>Check your understanding</h3>
   <p class="question">Which statement best integrates Stephens Chapter 1?</p>
   <div class="options">
-    <label class="option"><input type="radio" name="final" value="0"> Early childhood education developed from one educational philosophy that has remained unchanged.</label>
+    <label class="option"><input type="radio" name="final" value="0"> Early childhood education developed from one dominant philosophy whose central assumptions have remained largely unchanged despite later research and reform.</label>
     <label class="option"><input type="radio" name="final" value="1"> Current practice reflects historical views of childhood, philosophical and educational ideas, interdisciplinary evidence, professional standards, and contemporary influences.</label>
     <label class="option"><input type="radio" name="final" value="2"> History matters only when educators are choosing classroom decorations or themes.</label>
     <label class="option"><input type="radio" name="final" value="3"> Contemporary best practices make historical and theoretical knowledge unnecessary.</label>
@@ -318,10 +318,10 @@ document.getElementById('resetMatch').addEventListener('click',()=>{
   document.getElementById('matchFeedback').classList.remove('show');
 });
 
-document.getElementById('termsCheck').addEventListener('click',()=>radioCheck('terms',2,'termsFeedback','Early care and education blends children’s care needs with their educational experiences.','Look for the term that combines care and education.','terms'));
-document.getElementById('interCheck').addEventListener('click',()=>radioCheck('inter',1,'interFeedback','Knowledge from multiple disciplines helps support evidence-based environments, curriculum, guidance, and relationships.','Choose the response that emphasizes collective evidence rather than personal preference.','inter'));
-document.getElementById('pastCheck').addEventListener('click',()=>radioCheck('past',1,'pastFeedback','The chapter notes that children were often treated as smaller adults and that education was historically limited by class and circumstance.','Choose the response that recognizes historical inequality and changing views of childhood.','past'));
-document.getElementById('standardsCheck').addEventListener('click',()=>radioCheck('standards',1,'standardsFeedback','Historical understanding helps educators interpret current professional and ethical responsibilities.','Look for the answer that connects the field’s development with present responsibilities.','standards'));
+document.getElementById('termsCheck').addEventListener('click',()=>radioCheck('terms',3,'termsFeedback','Early care and education blends children’s care needs with their educational experiences.','Look for the term that combines care and education.','terms'));
+document.getElementById('interCheck').addEventListener('click',()=>radioCheck('inter',0,'interFeedback','Knowledge from multiple disciplines helps support evidence-based environments, curriculum, guidance, and relationships.','Choose the response that emphasizes collective evidence rather than personal preference.','inter'));
+document.getElementById('pastCheck').addEventListener('click',()=>radioCheck('past',2,'pastFeedback','The chapter notes that children were often treated as smaller adults and that education was historically limited by class and circumstance.','Choose the response that recognizes historical inequality and changing views of childhood.','past'));
+document.getElementById('standardsCheck').addEventListener('click',()=>radioCheck('standards',3,'standardsFeedback','Historical understanding helps educators interpret current professional and ethical responsibilities.','Look for the answer that connects the field’s development with present responsibilities.','standards'));
 document.getElementById('finalCheck').addEventListener('click',()=>radioCheck('final',1,'finalFeedback','The chapter presents current practice as the product of many historical, philosophical, educational, interdisciplinary, professional, and contemporary influences.','Choose the response that integrates the chapter’s major categories rather than reducing history to names and dates.','final'));
 
 document.getElementById('compareBtn').addEventListener('click',()=>{

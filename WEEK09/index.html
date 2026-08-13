@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLDV-03 Week 9 Interactive Reading Guide</title>
+<style>
+:root{--navy:#173f63;--teal:#287a78;--ink:#172033;--muted:#5c6678;--gold:#e1ad35;--border:#d8deea;--shadow:0 8px 24px rgba(22,32,51,.09);--green:#287a51;--soft:#f5f7fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.55}
+button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:var(--navy)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #4e9cf5;outline-offset:2px}
+.sitebar{background:var(--navy);color:#fff;padding:14px 20px}.sitebar-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:700}.logo{width:46px;height:46px;border:2px solid #fff;border-radius:12px;display:grid;place-items:center}.small{font-size:.9rem;color:var(--muted)}.sitebar .small{color:#d9e6f5}
+main{max-width:1180px;margin:0 auto;padding:28px 18px 60px}.hero{display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap}h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:.1em 0}.subtitle{font-size:1.08rem;margin:0;color:#39445a}
+.progress-wrap{min-width:260px}.progress-line{height:10px;background:#d9dee7;border-radius:999px;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),#52a981);transition:width .35s ease}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}.step{background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 12px;text-align:center;font-weight:650;color:#667085;text-decoration:none}.step.active{background:#eaf5f3;color:#145854;border-color:#a7d2cf}.step.done{background:#eaf7f1;color:#176847}
+.card{background:#fff;border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.story{display:grid;grid-template-columns:minmax(300px,44%) 1fr;background:linear-gradient(110deg,#f3f7ef,#fff)}.story img{width:100%;height:100%;min-height:430px;object-fit:cover}.story-copy{padding:30px}.kicker{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#476b3d}h2{font-size:1.55rem;margin:.25em 0 .5em}h3{font-size:1.18rem;margin:0 0 12px}.story-note{background:rgba(255,255,255,.88);border-left:5px solid var(--gold);padding:14px 16px;border-radius:12px;margin-top:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.activity{padding:24px}.question{font-weight:700;margin-bottom:14px}.options{display:grid;gap:10px}.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #ccd3df;border-radius:13px;padding:12px;background:#fff}.feedback{display:none;margin-top:14px;padding:13px 15px;border-radius:13px;background:#edf9f1;border:1px solid #acd7b9}.feedback.show{display:block}
+.match-row{display:grid;grid-template-columns:190px 1fr;gap:12px;align-items:center;margin:10px 0}.term{font-weight:750;background:#edf5ff;border:1px solid #a7c5ef;border-radius:10px;padding:10px}select{width:100%;padding:10px;border:1px solid #bac4d3;border-radius:10px;background:#fff}
+.btn{border:none;border-radius:12px;padding:12px 18px;font-weight:750;background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(40,122,81,.2)}.btn.secondary{background:#fff;color:var(--navy);border:1px solid #aeb9c8;box-shadow:none}.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.resource-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:18px 0;padding:16px 18px;border:1px solid #b9c9dc;border-radius:18px;background:#eef6ff}.resource-bar p{margin:0}.resource-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:12px;padding:11px 15px;font-weight:750;background:#fff;color:var(--navy);border:1px solid #9fb0c5}
+.concept-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.concept{padding:18px;border-radius:18px;border:1px solid var(--border);background:#fff}.concept strong{display:block;margin-bottom:6px}
+.reflection{margin-top:18px;padding:24px;background:linear-gradient(135deg,#f1fbf4,#fff)}textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px;padding:14px;resize:vertical}.compare-panel{display:none;margin-top:18px}.compare-panel.show{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.compare-box{border-radius:18px;padding:18px;border:1px solid var(--border)}.compare-box:nth-child(1){background:#fff8df}.compare-box:nth-child(2){background:#edf9f5}.compare-box:nth-child(3){background:#f4efff}
+.complete{display:none;margin-top:18px;padding:20px;background:#eaf8f1;border:1px solid #a9d9bf;border-radius:18px;align-items:center;justify-content:space-between;gap:14px}.complete.show{display:flex}.badge{display:inline-block;background:#e8f5ee;color:#176847;border-radius:999px;padding:5px 10px;font-weight:800;font-size:.82rem}.section-label{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800;color:var(--teal)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){.story,.grid2{grid-template-columns:1fr}.story img{min-height:240px;max-height:390px}.concept-strip,.compare-panel.show{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}@media(max-width:520px){main{padding:18px 12px 40px}.sitebar{padding:10px 12px}.steps{grid-template-columns:1fr}.step{text-align:left}.match-row{grid-template-columns:1fr}.activity,.reflection,.story-copy{padding:18px}.complete.show{align-items:flex-start;flex-direction:column}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress-fill{transition:none}}
+</style>
+</head>
+<body>
+<!-- Week 9 content marker -->
+<header class="sitebar"><div class="sitebar-inner"><div class="brand"><div class="logo" aria-hidden="true">03</div><div>Principles &amp; Practices<div class="small">Interactive Reading Guide</div></div></div><div class="small">Week 9 • Stephens Chapter 4</div></div></header>
+<main>
+<section class="hero" aria-labelledby="page-title"><div><span class="badge">Evidence before interpretation</span> <span class="badge">Observe • Document • Interpret</span><h1 id="page-title">But That’s What I Saw!</h1><p class="subtitle">Observation, documentation, and assessment</p></div><div class="progress-wrap"><div style="display:flex;justify-content:space-between;margin-bottom:7px"><strong>Overall progress</strong><span id="progressText">0%</span></div><div class="progress-line" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div></div></section>
+<nav class="steps"><a class="step active" href="#story">1. Vignette</a><a class="step" href="#develop">2. Evidence</a><a class="step" href="#dap">3. Use It</a><a class="step" href="#reflect">4. Reflect</a></nav>
+<aside class="resource-bar"><p><strong>Keep Stephens Chapter 4 nearby.</strong><br><span class="small">This guide supports the reading; it does not replace it.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/Principles_and_Practices_of_Teaching_Young_Children_%28Stephens_et_al.%29/04%3A_Observation_Documentation_and_Assessment" target="_blank" rel="noopener noreferrer">📖 Open Stephens Chapter 4</a></aside>
+<aside class="resource-bar"><p><strong>Practice freely.</strong><br><span class="small">Plan for about 15–20 minutes. Responses remain on this page and are not saved, graded, or submitted.</span></p></aside>
+
+<section id="story" class="card story"><img src="images/cldv03-week9-vignette.png" alt="Three college students compare objective observation notes and judgments while children build with blocks"><div class="story-copy"><div class="kicker">Opening vignette</div><h2>“But That’s What I Saw!”</h2>
+<p><strong>Jordan:</strong> “Liam was frustrated and selfish when he grabbed the long block.”</p><p><strong>Aaliyah:</strong> “Did you actually see selfish?”</p><p><strong>Maya:</strong> “I wrote, ‘Liam reached across the structure, took the long rectangular block from the floor beside Nia, held it against his chest, and said, “I need it.”’”</p><p><strong>Jordan:</strong> “That sounds like a police report.”</p><p><strong>Maya:</strong> “Maybe, but it separates what happened from what I think it meant.”</p><p><strong>Aaliyah:</strong> “If we begin with labels like selfish, shy, aggressive, or advanced, our assumptions can shape everything that follows.”</p><p><strong>Jordan:</strong> “So first we document what we can see and hear. Then we look for patterns, development, and context.”</p><p><strong>Maya:</strong> “And families may see things we do not see at school.”</p>
+<div class="story-note"><strong>Think first:</strong> Why must educators distinguish between what they observe and what they infer or interpret?</div><div class="btn-row"><button class="btn" id="storyDone" type="button">I’ve considered the vignette</button></div></div></section>
+
+<section id="develop" class="grid2">
+<article class="card activity"><div class="section-label">Observation vs. judgment</div><h3>🔎 Choose the objective note</h3><p class="question">Which entry records observable evidence rather than a label or inference?</p><div class="options">
+<label class="option"><input type="radio" name="unfolds" value="0"> Nia selfishly refused to share the blocks — when considered within the specific situation described here.</label>
+<label class="option"><input type="radio" name="unfolds" value="1"> Nia held two blocks against her chest and said, “I’m still using these,” when Liam reached toward them.</label>
+<label class="option"><input type="radio" name="unfolds" value="2"> Nia was angry because Liam ruined her plan — when considered within the situation described here.</label>
+<label class="option"><input type="radio" name="unfolds" value="3"> Nia has poor social skills during block play — when considered within the situation described here.</label></div><div class="btn-row"><button class="btn" id="unfoldsCheck" type="button">Check my thinking</button></div><div class="feedback" id="unfoldsFeedback" role="status" aria-live="polite"></div></article>
+
+<article class="card activity"><div class="section-label">Observation methods</div><h3>🧩 Match the tool to its purpose</h3><p>Choose the best description for each method.</p>
+<div class="match-row"><div class="term" id="match-term-1">Anecdotal note</div><select data-answer="b" id="match-select-1" aria-labelledby="match-term-1"><option value="">Choose…</option><option value="d">Curated collection showing growth over time</option><option value="a">Continuous detailed account during a set period</option><option value="c">Predetermined skills marked present or absent</option><option value="b">Brief factual account of a meaningful event</option></select></div>
+<div class="match-row"><div class="term" id="match-term-2">Running record</div><select data-answer="a" id="match-select-2" aria-labelledby="match-term-2"><option value="">Choose…</option><option value="c">Predetermined skills marked present or absent</option><option value="d">Curated collection showing growth over time</option><option value="b">Brief factual account of a meaningful event</option><option value="a">Continuous detailed account during a set period</option></select></div>
+<div class="match-row"><div class="term" id="match-term-3">Checklist</div><select data-answer="c" id="match-select-3" aria-labelledby="match-term-3"><option value="">Choose…</option><option value="b">Brief factual account of a meaningful event</option><option value="a">Continuous detailed account during a set period</option><option value="d">Curated collection showing growth over time</option><option value="c">Predetermined skills marked present or absent</option></select></div>
+<div class="match-row"><div class="term" id="match-term-4">Portfolio</div><select data-answer="d" id="match-select-4" aria-labelledby="match-term-4"><option value="">Choose…</option><option value="a">Continuous detailed account during a set period</option><option value="c">Predetermined skills marked present or absent</option><option value="d">Curated collection showing growth over time</option><option value="b">Brief factual account of a meaningful event</option></select></div>
+<div class="btn-row"><button class="btn" id="checkMatch" type="button">Check matches</button><button class="btn secondary" id="resetMatch" type="button">Reset</button></div><div class="feedback" id="matchFeedback" role="status" aria-live="polite"></div></article>
+</section>
+
+<section class="concept-strip"><div class="concept"><strong>👁️ Observation gathers evidence.</strong>Accurate observers concentrate on what children do and say rather than rushing to labels.</div><div class="concept"><strong>🗂️ Documentation preserves evidence.</strong>Notes, samples, photos, and records make learning visible and support later analysis.</div><div class="concept"><strong>🧭 Assessment gives evidence purpose.</strong>Educators examine patterns to understand development, plan curriculum, communicate, and improve practice.</div></section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">Evidence and interpretation</div><h3>🧱 What may the evidence support?</h3><p class="question">Across several days, Liam takes long blocks, studies bridge pictures, and says, “We need a road under it.” What is the strongest interpretation?</p><div class="options">
+<label class="option"><input type="radio" name="integrated" value="0"> Liam is advanced and should lead every block activity — for the situation described.</label>
+<label class="option"><input type="radio" name="integrated" value="1"> Liam is controlling because he chooses the same materials — for the situation described.</label>
+<label class="option"><input type="radio" name="integrated" value="2"> Liam shows a sustained interest in structures that can inform more observation and curriculum planning.</label>
+<label class="option"><input type="radio" name="integrated" value="3"> Liam understands engineering concepts at an adult level — within the situation described here.</label></div><div class="btn-row"><button class="btn" id="integratedCheck" type="button">Check answer</button></div><div class="feedback" id="integratedFeedback" role="status" aria-live="polite"></div></article>
+
+<article class="card activity"><div class="section-label">Bias awareness</div><h3>⚖️ Slow down the conclusion</h3><p class="question">A teacher writes “Sofia is shy” after one quiet circle time. What should happen next?</p><div class="options">
+<label class="option"><input type="radio" name="environment" value="0"> Add the label to Sofia’s permanent portfolio — in this context.</label>
+<label class="option"><input type="radio" name="environment" value="1"> Observe across settings and times, record behavior objectively, and seek family context.</label>
+<label class="option"><input type="radio" name="environment" value="2"> Require Sofia to speak to test the conclusion — in context.</label>
+<label class="option"><input type="radio" name="environment" value="3"> Ask classmates whether they also think Sofia is shy — here.</label></div><div class="btn-row"><button class="btn" id="environmentCheck" type="button">Check answer</button></div><div class="feedback" id="environmentFeedback" role="status" aria-live="polite"></div></article>
+</section>
+
+<section id="dap" class="grid2">
+<article class="card activity"><div class="section-label">From evidence to curriculum</div><h3>🛠️ Plan responsively</h3><p class="question">Children repeatedly compare tower heights, count blocks, and revise unstable bases. What is the best response?</p><div class="options">
+<label class="option"><input type="radio" name="dap" value="0"> Replace blocks with a worksheet on tall and short — in this context.</label>
+<label class="option"><input type="radio" name="dap" value="1"> Correct each structure before it falls — when considered in the situation described.</label>
+<label class="option"><input type="radio" name="dap" value="2"> Wait until every child shows the same interest — for the situation described.</label>
+<label class="option"><input type="radio" name="dap" value="3"> Add measuring tools and structure images, introduce useful vocabulary, and observe what happens next.</label></div><div class="btn-row"><button class="btn" id="dapCheck" type="button">Check answer</button></div><div class="feedback" id="dapFeedback" role="status" aria-live="polite"></div></article>
+
+<article class="card activity"><div class="section-label">Family partnership</div><h3>🏠 Complete the picture</h3><p class="question">Why should family observations be included in assessment?</p><div class="options">
+<label class="option"><input type="radio" name="strengths" value="0"> Families observe children across relationships, languages, routines, and settings teachers may not see.</label>
+<label class="option"><input type="radio" name="strengths" value="1"> Family reports should replace classroom evidence — within the situation described here.</label>
+<label class="option"><input type="radio" name="strengths" value="2"> Families can confirm the teacher’s first interpretation — for the situation described.</label>
+<label class="option"><input type="radio" name="strengths" value="3"> Family input is needed only when a child has a delay.</label></div><div class="btn-row"><button class="btn" id="strengthsCheck" type="button">Check answer</button></div><div class="feedback" id="strengthsFeedback" role="status" aria-live="polite"></div></article>
+</section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">Ethical documentation</div><h3>🔒 Protect the child</h3><p class="question">Which practice is most professionally responsible?</p><div class="options">
+<label class="option"><input type="radio" name="culture" value="0"> Share a funny observation online without the child’s name — in this context.</label>
+<label class="option"><input type="radio" name="culture" value="1"> Leave notes visible so all visitors can comment — for the situation described.</label>
+<label class="option"><input type="radio" name="culture" value="2"> Store records securely, follow consent and confidentiality policies, and share only for legitimate purposes.</label>
+<label class="option"><input type="radio" name="culture" value="3"> Avoid documentation because all records create privacy risks — for the situation described.</label></div><div class="btn-row"><button class="btn" id="cultureCheck" type="button">Check answer</button></div><div class="feedback" id="cultureFeedback" role="status" aria-live="polite"></div></article>
+
+<article class="card activity"><div class="section-label">Evaluate teaching</div><h3>🔄 Look at adult practice, too</h3><p class="question">Observation shows children rarely use the science table. What is the strongest response?</p><div class="options">
+<label class="option"><input type="radio" name="differentiate" value="0"> Conclude that the class lacks scientific interest — in this context.</label>
+<label class="option"><input type="radio" name="differentiate" value="1"> Require every child to spend ten minutes there — in context.</label>
+<label class="option"><input type="radio" name="differentiate" value="2"> Remove the area immediately — when considered in the situation described.</label>
+<label class="option"><input type="radio" name="differentiate" value="3"> Examine access, materials, presentation, and teacher invitations; revise and observe again.</label></div><div class="btn-row"><button class="btn" id="differentiateCheck" type="button">Check answer</button></div><div class="feedback" id="differentiateFeedback" role="status" aria-live="polite"></div></article>
+</section>
+
+<section class="card activity" style="margin-top:18px"><div class="section-label">Final professional judgment</div><h3>Complete the observation cycle</h3><p class="question">Which sequence best represents responsible practice?</p><div class="options">
+<label class="option"><input type="radio" name="final" value="0"> Label → confirm → report → teach — when considered in the situation described.</label>
+<label class="option"><input type="radio" name="final" value="1"> Test → rank → group → repeat — when considered in the situation described.</label>
+<label class="option"><input type="radio" name="final" value="2"> Observe objectively → document evidence → examine patterns and context → plan and evaluate</label>
+<label class="option"><input type="radio" name="final" value="3"> Interpret → observe → document only confirming examples → decide — in this context.</label></div><div class="btn-row"><button class="btn" id="finalCheck" type="button">Check my thinking</button></div><div class="feedback" id="finalFeedback" role="status" aria-live="polite"></div></section>
+
+<aside class="resource-bar"><p><strong>Need a quick review?</strong><br><span class="small">Revisit objectivity, observation tools, assessment, and family partnership.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/Principles_and_Practices_of_Teaching_Young_Children_%28Stephens_et_al.%29/04%3A_Observation_Documentation_and_Assessment" target="_blank" rel="noopener noreferrer">📖 Return to Stephens Chapter 4</a></aside>
+
+<section id="reflect" class="card reflection"><div class="kicker">Professional reflection</div><h2>Evidence changes what happens next</h2><p><strong>Complete this sentence: An objective observation is useful because…</strong></p><label for="reflectionText" class="sr-only">Your reflection</label><textarea id="reflectionText" placeholder="Type a few words or sentences. This response remains on this page and is not graded or submitted."></textarea><div class="btn-row"><button class="btn" id="compareBtn" type="button">Compare My Thinking</button></div><div class="compare-panel" id="comparePanel"><div class="compare-box"><h3>The chapter emphasizes…</h3><p>Objective records provide evidence that can be examined rather than labels that quietly become conclusions.</p></div><div class="compare-box"><h3>Consider…</h3><p>Did your response mention patterns, development, context, bias, curriculum, family knowledge, or teacher decisions?</p></div><div class="compare-box"><h3>Add to your thinking…</h3><p>Observation is not passive watching. It takes concentration, practice, ethical care, and willingness to revise an interpretation.</p></div></div></section>
+
+<div class="complete" id="completeBox"><div><strong>🌟 Week 9 guide complete!</strong><br><span class="small">You distinguished evidence from judgment and used observation to inform assessment, curriculum, family partnership, and teaching.</span></div><button class="btn" id="restartBtn" type="button">Restart guide</button></div>
+</main>
+<script>
+const state={story:false,unfolds:false,match:false,integrated:false,environment:false,dap:false,strengths:false,culture:false,differentiate:false,final:false,reflect:false};const steps=[...document.querySelectorAll('.step')];
+function updateProgress(){const done=Object.values(state).filter(Boolean).length;const pct=Math.round(done/11*100);const bar=document.querySelector('.progress-line');document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressText').textContent=pct+'%';bar.setAttribute('aria-valuenow',pct);steps.forEach((s,i)=>{s.classList.toggle('done',i<Math.min(4,Math.ceil(done*4/11)));s.classList.toggle('active',i===Math.min(3,Math.floor(done*4/11)))});if(done===11)document.getElementById('completeBox').classList.add('show')}
+function show(box,html){box.innerHTML=html;box.classList.add('show')}
+function radioCheck(name,correct,feedbackId,success,retry,key){const c=document.querySelector('input[name='+name+']:checked'),f=document.getElementById(feedbackId);if(!c)return show(f,'⚠️ Choose an answer first.');const ok=Number(c.value)===correct;show(f,ok?'✅ <strong>Correct.</strong> '+success:'↻ <strong>Try again.</strong> '+retry);if(ok){state[key]=true;updateProgress()}}
+document.getElementById('storyDone').addEventListener('click',()=>{state.story=true;updateProgress();document.getElementById('develop').scrollIntoView({behavior:'smooth'})});
+document.getElementById('unfoldsCheck').addEventListener('click',()=>radioCheck('unfolds',1,'unfoldsFeedback','The note records visible actions and exact words without assigning motive or character.','Choose the statement a camera or microphone could verify.','unfolds'));
+document.getElementById('checkMatch').addEventListener('click',()=>{const ss=[...document.querySelectorAll('.match-row select')],f=document.getElementById('matchFeedback');if(!ss.every(s=>s.value))return show(f,'⚠️ Complete all four matches first.');const n=ss.filter(s=>s.value===s.dataset.answer).length;show(f,n===4?'✅ <strong>Nice work!</strong> Each method serves a distinct documentation purpose.':'↻ You matched <strong>'+n+' of 4</strong> correctly. Reconsider the amount, timing, and organization of evidence each tool provides.');if(n===4){state.match=true;updateProgress()}});
+document.getElementById('resetMatch').addEventListener('click',()=>{document.querySelectorAll('.match-row select').forEach(s=>s.value='');document.getElementById('matchFeedback').classList.remove('show')});
+document.getElementById('integratedCheck').addEventListener('click',()=>radioCheck('integrated',2,'integratedFeedback','Repeated evidence supports a tentative, useful interpretation without turning it into a fixed label.','Choose the interpretation grounded in patterns while remaining open to more evidence.','integrated'));
+document.getElementById('environmentCheck').addEventListener('click',()=>radioCheck('environment',1,'environmentFeedback','Multiple observations and family context reduce the risk of treating one moment as a stable trait.','Avoid fixing a label after one observation.','environment'));
+document.getElementById('dapCheck').addEventListener('click',()=>radioCheck('dap',3,'dapFeedback','Intentional teaching builds on documented interests, extends learning, and observes the results.','Use the evidence to extend—not replace or control—the investigation.','dap'));
+document.getElementById('strengthsCheck').addEventListener('click',()=>radioCheck('strengths',0,'strengthsFeedback','Families contribute evidence from contexts, relationships, languages, and routines beyond school.','Family knowledge complements rather than replaces or merely confirms classroom evidence.','strengths'));
+document.getElementById('cultureCheck').addEventListener('click',()=>radioCheck('culture',2,'cultureFeedback','Documentation carries a duty to protect children’s dignity, privacy, and confidentiality.','Choose the practice that permits legitimate use while safeguarding private information.','culture'));
+document.getElementById('differentiateCheck').addEventListener('click',()=>radioCheck('differentiate',3,'differentiateFeedback','Observation helps educators evaluate environments and their own choices, then test thoughtful improvements.','Investigate adult practice and access before blaming children.','differentiate'));
+document.getElementById('finalCheck').addEventListener('click',()=>radioCheck('final',2,'finalFeedback','Professional assessment moves from objective evidence to contextual interpretation, responsive action, and continued evaluation.','Choose the cycle that begins with evidence and keeps conclusions open to review.','final'));
+document.getElementById('compareBtn').addEventListener('click',()=>{document.getElementById('comparePanel').classList.add('show');state.reflect=true;updateProgress();document.getElementById('comparePanel').scrollIntoView({behavior:'smooth',block:'nearest'})});
+document.getElementById('restartBtn').addEventListener('click',()=>location.reload());updateProgress();
+</script>
+<script>
+// Quality-control layer: shuffle complete labels and each matching bank independently.
+(function(){
+  function shuffle(items){
+    for(let i=items.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [items[i],items[j]]=[items[j],items[i]];
+    }
+    return items;
+  }
+  document.querySelectorAll('.options').forEach(group=>{
+    shuffle([...group.querySelectorAll(':scope > label.option')]).forEach(label=>group.appendChild(label));
+  });
+  document.querySelectorAll('select[data-answer]').forEach(select=>{
+    const placeholder=select.querySelector('option[value=""]');
+    shuffle([...select.options].filter(option=>option.value!=="")).forEach(option=>select.appendChild(option));
+    if(placeholder){select.insertBefore(placeholder,select.firstChild);select.value="";}
+  });
+  document.querySelectorAll('.feedback').forEach(region=>{
+    region.setAttribute('role','status');
+    region.setAttribute('aria-live','polite');
+  });
+  const reset=document.getElementById('resetMatch');
+  if(reset){
+    reset.addEventListener('click',()=>{
+      if(typeof state!=="undefined" && Object.prototype.hasOwnProperty.call(state,'match')){
+        state.match=false;
+        const complete=document.getElementById('completeBox');
+        if(complete)complete.classList.remove('show');
+        if(typeof updateProgress==="function")updateProgress();
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>

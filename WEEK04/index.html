@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CLDV-03 Week 4 Interactive Reading Guide</title>
+<style>
+:root{--navy:#173f63;--teal:#287a78;--ink:#172033;--muted:#5c6678;--gold:#e1ad35;--border:#d8deea;--shadow:0 8px 24px rgba(22,32,51,.09);--green:#287a51;--soft:#f5f7fb}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.55}
+button,input,textarea,select{font:inherit} button{cursor:pointer} a{color:var(--navy)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #4e9cf5;outline-offset:2px}
+.sitebar{background:var(--navy);color:#fff;padding:14px 20px}.sitebar-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700}.logo{width:46px;height:46px;border:2px solid #fff;border-radius:12px;display:grid;place-items:center}
+.small{font-size:.9rem;color:var(--muted)}.sitebar .small{color:#d9e6f5}
+main{max-width:1180px;margin:0 auto;padding:28px 18px 60px}.hero{display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:.1em 0}.subtitle{font-size:1.08rem;margin:0;color:#39445a}
+.progress-wrap{min-width:260px}.progress-line{height:10px;background:#d9dee7;border-radius:999px;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),#52a981);transition:width .35s ease}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:24px 0}.step{background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 12px;text-align:center;font-weight:650;color:#667085;text-decoration:none}.step.active{background:#eaf5f3;color:#145854;border-color:#a7d2cf}.step.done{background:#eaf7f1;color:#176847}
+.card{background:#fff;border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.story{display:grid;grid-template-columns:minmax(300px,44%) 1fr;background:linear-gradient(110deg,#fff8e7,#fff)}
+.story img{width:100%;height:100%;min-height:420px;object-fit:cover}.story-copy{padding:30px}.kicker{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#7b5a13}
+h2{font-size:1.55rem;margin:.25em 0 .5em}h3{font-size:1.18rem;margin:0 0 12px}.story-note{background:rgba(255,255,255,.86);border-left:5px solid var(--gold);padding:14px 16px;border-radius:12px;margin-top:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.activity{padding:24px}.question{font-weight:700;margin-bottom:14px}.options{display:grid;gap:10px}.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #ccd3df;border-radius:13px;padding:12px;background:#fff}
+.feedback{display:none;margin-top:14px;padding:13px 15px;border-radius:13px;background:#edf9f1;border:1px solid #acd7b9}.feedback.show{display:block}
+.match-row{display:grid;grid-template-columns:190px 1fr;gap:12px;align-items:center;margin:10px 0}.term{font-weight:750;background:#edf5ff;border:1px solid #a7c5ef;border-radius:10px;padding:10px}
+select{width:100%;padding:10px;border:1px solid #bac4d3;border-radius:10px;background:#fff}.btn{border:none;border-radius:12px;padding:12px 18px;font-weight:750;background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(40,122,81,.2)}.btn.secondary{background:#fff;color:var(--navy);border:1px solid #aeb9c8;box-shadow:none}.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.resource-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:18px 0;padding:16px 18px;border:1px solid #b9c9dc;border-radius:18px;background:#eef6ff}.resource-bar p{margin:0}.resource-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:12px;padding:11px 15px;font-weight:750;background:#fff;color:var(--navy);border:1px solid #9fb0c5}.resource-link:hover{text-decoration:underline;background:#f7fbff}
+.concept-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.concept{padding:18px;border-radius:18px;border:1px solid var(--border);background:#fff}.concept strong{display:block;margin-bottom:6px}
+.reflection{margin-top:18px;padding:24px;background:linear-gradient(135deg,#f1fbf4,#fff)}textarea{width:100%;min-height:120px;border:1px solid #bbc5d3;border-radius:14px;padding:14px;resize:vertical}
+.compare-panel{display:none;margin-top:18px}.compare-panel.show{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.compare-box{border-radius:18px;padding:18px;border:1px solid var(--border)}.compare-box:nth-child(1){background:#fff8df}.compare-box:nth-child(2){background:#edf9f5}.compare-box:nth-child(3){background:#f4efff}
+.complete{display:none;margin-top:18px;padding:20px;background:#eaf8f1;border:1px solid #a9d9bf;border-radius:18px;align-items:center;justify-content:space-between;gap:14px}.complete.show{display:flex}
+.badge{display:inline-block;background:#e8f5ee;color:#176847;border-radius:999px;padding:5px 10px;font-weight:800;font-size:.82rem}.section-label{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800;color:var(--teal)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:850px){.story,.grid2{grid-template-columns:1fr}.story img{min-height:240px;max-height:390px}.concept-strip,.compare-panel.show{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){main{padding:18px 12px 40px}.sitebar{padding:10px 12px}.steps{grid-template-columns:1fr}.step{text-align:left}.match-row{grid-template-columns:1fr}.activity,.reflection,.story-copy{padding:18px}.complete.show{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress-fill{transition:none}}
+</style>
+</head>
+<body>
+<header class="sitebar"><div class="sitebar-inner"><div class="brand"><div class="logo" aria-hidden="true">03</div><div>Principles &amp; Practices<div class="small">Interactive Reading Guide</div></div></div><div class="small">Week 4 • Stephens Chapter 3</div></div></header>
+<main>
+<section class="hero" aria-labelledby="page-title"><div><span class="badge">Low-stakes self-check</span> <span class="badge">Question • Connect • Apply</span><h1 id="page-title">What’s Your Why?</h1><p class="subtitle">Why, who, what, when, where, and how of the early childhood teaching profession</p></div><div class="progress-wrap" aria-label="Guide progress"><div style="display:flex;justify-content:space-between;margin-bottom:7px"><strong>Overall progress</strong><span id="progressText">0%</span></div><div class="progress-line" role="progressbar" aria-label="Overall progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div></div></section>
+<nav class="steps" aria-label="Guide sections"><a class="step active" href="#story">1. Vignette</a><a class="step" href="#explore">2. Explore</a><a class="step" href="#check">3. Self-Check</a><a class="step" href="#reflect">4. Reflect</a></nav>
+
+<aside class="resource-bar"><p><strong>Keep Stephens Chapter 3 nearby.</strong><br><span class="small">This guide supports the reading; it does not replace it.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/Principles_and_Practices_of_Teaching_Young_Children_(Stephens_et_al.)/03%3A_The_Early_Childhood_Teaching_Profession" target="_blank" rel="noopener noreferrer">📖 Open Stephens Chapter 3</a></aside>
+<aside class="resource-bar"><p><strong>Practice freely.</strong><br><span class="small">Plan for about 12–18 minutes. Responses remain on this page and are not saved, graded, or submitted to Canvas.</span></p></aside>
+
+<section id="story" class="card story"><img src="images/cldv03-week4-vignette.png" alt="Three diverse college students discuss their reasons for becoming early childhood educators at an outdoor campus table"><div class="story-copy"><div class="kicker">Opening vignette</div><h2>“What’s Your Why?”</h2>
+<p><strong>Maya:</strong> “This chapter feels different. It’s not just asking what teachers do. It’s asking why we want to do this work.”</p>
+<p><strong>Jordan:</strong> “My first answer was, ‘Because I like kids.’ But now that sounds a little too simple.”</p>
+<p><strong>Aaliyah:</strong> “It’s a good starting point, though. Maybe the chapter is asking us to go deeper. Why young children? Why families? Why this kind of work, even when it’s tiring, messy, emotional, and not always appreciated?”</p>
+<p><strong>Jordan:</strong> “You had me until ‘messy.’ I’m still recovering from the glitter incident in lab.”</p>
+<p><strong>Maya:</strong> “But that’s part of it, right? The profession includes the sweet moments and the hard moments. We need to understand who children and families are, what teachers are responsible for, where we can work, when to keep growing, and how to become better over time.”</p>
+<p><strong>Aaliyah:</strong> “And maybe our ‘why’ helps us stay grounded when the work gets complicated.”</p>
+<p><strong>Maya:</strong> “So maybe becoming a teacher starts with a bigger question: What kind of difference do I hope to make?”</p>
+<div class="story-note"><strong>Think first:</strong> Why do you want to work with young children, and how might that reason shape the kind of teacher you become?</div>
+<div class="btn-row"><button class="btn" id="storyDone" type="button">I’ve considered the vignette</button></div></div></section>
+
+<section id="explore" class="grid2">
+<article class="card activity"><div class="section-label">Why?</div><h3>🔎 Choose the strongest response</h3><p class="question">Which response best reflects the chapter’s treatment of a teacher’s “why”?</p><div class="options">
+<label class="option"><input type="radio" name="why" value="0"> It is a private source of motivation that may encourage persistence but should have little influence on professional choices or relationships.</label>
+<label class="option"><input type="radio" name="why" value="1"> It should always be identical for every educator — when considered within the specific professional situation described in this example.</label>
+<label class="option"><input type="radio" name="why" value="2"> It is a deeper purpose that can guide persistence, relationships, choices, and professional identity — for the situation described.</label>
+<label class="option"><input type="radio" name="why" value="3"> It matters only before a person begins working in the field — when considered within the situation described here.</label></div>
+<div class="btn-row"><button class="btn" id="whyCheck" type="button">Check my thinking</button></div><div class="feedback" id="whyFeedback" aria-live="polite" role="status"></div></article>
+
+<article class="card activity"><div class="section-label">Chapter structure</div><h3>🧩 Match it up</h3><p>Match each question word with the best chapter focus.</p>
+<div class="match-row"><div class="term" id="match-term-1">Who?</div><select data-answer="b" id="match-select-1" aria-labelledby="match-term-1"><option value="">Choose…</option><option value="c">Roles, responsibilities, reflection, observation, and professional tasks — here.</option><option value="d">Program locations and settings in which early learning occurs</option><option value="b">Children, families, teachers, diversity, and relationships — in context.</option><option value="a">Career pathways, preparation, credentials, and lifelong learning — here.</option></select></div>
+<div class="match-row"><div class="term" id="match-term-2">What?</div><select data-answer="c" id="match-select-2" aria-labelledby="match-term-2"><option value="">Choose…</option><option value="c">Roles, responsibilities, reflection, observation, and professional tasks — here.</option><option value="d">Program locations and settings in which early learning occurs</option><option value="b">Children, families, teachers, diversity, and relationships — in context.</option><option value="a">Career pathways, preparation, credentials, and lifelong learning — here.</option></select></div>
+<div class="match-row"><div class="term" id="match-term-3">Where?</div><select data-answer="d" id="match-select-3" aria-labelledby="match-term-3"><option value="">Choose…</option><option value="c">Roles, responsibilities, reflection, observation, and professional tasks — here.</option><option value="d">Program locations and settings in which early learning occurs</option><option value="b">Children, families, teachers, diversity, and relationships — in context.</option><option value="a">Career pathways, preparation, credentials, and lifelong learning — here.</option></select></div>
+<div class="match-row"><div class="term" id="match-term-4">How?</div><select data-answer="a" id="match-select-4" aria-labelledby="match-term-4"><option value="">Choose…</option><option value="c">Roles, responsibilities, reflection, observation, and professional tasks — here.</option><option value="d">Program locations and settings in which early learning occurs</option><option value="b">Children, families, teachers, diversity, and relationships — in context.</option><option value="a">Career pathways, preparation, credentials, and lifelong learning — here.</option></select></div>
+<div class="btn-row"><button class="btn" id="checkMatch" type="button">Check matches</button><button class="btn secondary" id="resetMatch" type="button">Reset</button></div><div class="feedback" id="matchFeedback" aria-live="polite" role="status"></div></article>
+</section>
+
+<section class="concept-strip"><div class="concept"><strong>🤝 Relationships are central.</strong>Effective practice depends on respectful interactions and collaboration with children, families, colleagues, and communities.</div><div class="concept"><strong>🧭 Roles require reflection.</strong>Educators observe, plan, guide, communicate, assess, and continually examine how their choices affect others.</div><div class="concept"><strong>🌱 Growth continues.</strong>Professional pathways include formal education, credentials, coaching, networking, organizations, and ongoing learning.</div></section>
+
+<section id="check" class="grid2">
+<article class="card activity"><div class="section-label">Who?</div><h3>👨‍👩‍👧 Families as partners</h3><p class="question">Which practice best reflects the chapter’s view of families?</p><div class="options">
+<label class="option"><input type="radio" name="families" value="0"> Families are important teaching partners whose knowledge and perspectives should shape collaboration — for the situation described.</label>
+<label class="option"><input type="radio" name="families" value="1"> Families should mainly receive clear instructions from teachers because professional preparation gives educators the most relevant knowledge for decisions.</label>
+<label class="option"><input type="radio" name="families" value="2"> Families should participate only during formal conferences — when considered within the specific professional situation described here.</label>
+<label class="option"><input type="radio" name="families" value="3"> Teachers should avoid discussing differences in family culture or structure — when considered in the situation described.</label></div>
+<div class="btn-row"><button class="btn" id="familiesCheck" type="button">Check answer</button></div><div class="feedback" id="familiesFeedback" aria-live="polite" role="status"></div></article>
+
+<article class="card activity"><div class="section-label">What?</div><h3>📝 Professional responsibility</h3><p class="question">Which activity is most clearly part of an early childhood teacher’s professional work?</p><div class="options">
+<label class="option"><input type="radio" name="work" value="0"> Relying on professional memory instead of documenting observations, because experienced teachers can recognize children’s needs without formal evidence</label>
+<label class="option"><input type="radio" name="work" value="1"> Using the same routine for every group without adjustment — when considered in the situation described.</label>
+<label class="option"><input type="radio" name="work" value="2"> Avoiding feedback so personal teaching style remains unchanged — when considered within the situation described here.</label>
+<label class="option"><input type="radio" name="work" value="3"> Observing children, reflecting on evidence, planning responsively, and building relationships — within the situation described here.</label></div>
+<div class="btn-row"><button class="btn" id="workCheck" type="button">Check answer</button></div><div class="feedback" id="workFeedback" aria-live="polite" role="status"></div></article>
+</section>
+
+<section class="grid2">
+<article class="card activity"><div class="section-label">When and where?</div><h3>🏫 Variety in the field</h3><p class="question">Which statement best reflects the chapter’s description of early childhood work settings and schedules?</p><div class="options">
+<label class="option"><input type="radio" name="settings" value="0"> Nearly all educators work in identical center-based programs on the same schedule — for the situation described.</label>
+<label class="option"><input type="radio" name="settings" value="1"> Programs vary in location, schedule, population served, and organization, so teachers need flexibility — in this context.</label>
+<label class="option"><input type="radio" name="settings" value="2"> Professional work occurs only inside traditional classrooms — when considered within the specific professional situation described here.</label>
+<label class="option"><input type="radio" name="settings" value="3"> The program setting and schedule determine quality more strongly than the relationships, curriculum, and learning experiences within the setting.</label></div>
+<div class="btn-row"><button class="btn" id="settingsCheck" type="button">Check answer</button></div><div class="feedback" id="settingsFeedback" aria-live="polite" role="status"></div></article>
+
+<article class="card activity"><div class="section-label">How?</div><h3>🎓 Becoming and growing</h3><p class="question">Which pathway best reflects the chapter’s view of professional development?</p><div class="options">
+<label class="option"><input type="radio" name="growth" value="0"> Combine education, credentials, coaching, networking, professional organizations, and continued reflection — within the situation described here.</label>
+<label class="option"><input type="radio" name="growth" value="1"> Complete the required preparation, then rely primarily on accumulated classroom experience rather than continuing education or professional networks</label>
+<label class="option"><input type="radio" name="growth" value="2"> Avoid new information once hired so practice remains consistent — when considered in the situation described.</label>
+<label class="option"><input type="radio" name="growth" value="3"> Pursue credentials only when required by an employer — when considered within the situation described here.</label></div>
+<div class="btn-row"><button class="btn" id="growthCheck" type="button">Check answer</button></div><div class="feedback" id="growthFeedback" aria-live="polite" role="status"></div></article>
+</section>
+
+<section class="card activity" style="margin-top:18px"><div class="section-label">Final self-check</div><h3>Check your understanding</h3><p class="question">Which statement best integrates Stephens Chapter 3?</p><div class="options">
+<label class="option"><input type="radio" name="final" value="0"> The profession is mainly about enjoying children, selecting engaging classroom activities, and developing a personal teaching style through experience.</label>
+<label class="option"><input type="radio" name="final" value="1"> Professional success depends mostly on finding one ideal workplace — when considered within the situation described here.</label>
+<label class="option"><input type="radio" name="final" value="2"> Becoming an early childhood professional involves purpose, relationships, defined responsibilities, varied settings, preparation, reflection, and lifelong growth.</label>
+<label class="option"><input type="radio" name="final" value="3"> Once a person understands the basics, continued learning is optional — when considered in the situation described.</label></div>
+<div class="btn-row"><button class="btn" id="finalCheck" type="button">Check my thinking</button></div><div class="feedback" id="finalFeedback" aria-live="polite" role="status"></div></section>
+
+<aside class="resource-bar"><p><strong>Need a quick review?</strong><br><span class="small">Revisit the Why, Who, What, When, Where, and How sections before reflecting.</span></p><a class="resource-link" href="https://socialsci.libretexts.org/Bookshelves/Early_Childhood_Education/Principles_and_Practices_of_Teaching_Young_Children_(Stephens_et_al.)/03%3A_The_Early_Childhood_Teaching_Profession" target="_blank" rel="noopener noreferrer">📖 Return to Stephens Chapter 3</a></aside>
+
+<section id="reflect" class="card reflection"><div class="kicker">Final reflection</div><h2>Complete this sentence</h2><p><strong>My “why” for working with young children matters because…</strong></p><label for="reflectionText" class="sr-only">Your reflection</label><textarea id="reflectionText" placeholder="Type a few words or sentences. This response remains on this page and is not graded or submitted."></textarea><div class="btn-row"><button class="btn" id="compareBtn" type="button">Compare My Thinking</button></div><div class="compare-panel" id="comparePanel" aria-live="polite"><div class="compare-box"><h3>The chapter emphasizes…</h3><p>A clear sense of purpose can help educators connect their motivations with ethical, relational, and professional responsibilities.</p></div><div class="compare-box"><h3>Consider…</h3><p>Did your response move beyond “I like children” to include families, learning, equity, relationships, or social contribution?</p></div><div class="compare-box"><h3>Add to your thinking…</h3><p>Your “why” can grow over time as you gain experience, deepen knowledge, and encounter new professional roles and communities.</p></div></div></section>
+
+<div class="complete" id="completeBox"><div><strong>🌟 Guide complete!</strong><br><span class="small">You explored purpose, relationships, responsibilities, settings, pathways, and ongoing professional growth.</span></div><button class="btn" id="restartBtn" type="button">Restart guide</button></div>
+</main>
+<script>
+const state={story:false,why:false,match:false,families:false,work:false,settings:false,growth:false,final:false,reflect:false};
+const steps=[...document.querySelectorAll('.step')];
+function updateProgress(){const done=Object.values(state).filter(Boolean).length;const pct=Math.round(done/9*100);const bar=document.querySelector('.progress-line');document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressText').textContent=pct+'%';bar.setAttribute('aria-valuenow',pct);steps.forEach((s,i)=>{s.classList.toggle('done',i<Math.min(4,Math.ceil(done*4/9)));s.classList.toggle('active',i===Math.min(3,Math.floor(done*4/9)))});if(done===9)document.getElementById('completeBox').classList.add('show')}
+function show(box,html){box.innerHTML=html;box.classList.add('show')}
+function radioCheck(name,correct,feedbackId,success,retry,key){const c=document.querySelector('input[name='+name+']:checked'),f=document.getElementById(feedbackId);if(!c)return show(f,'⚠️ Choose an answer first.');const ok=Number(c.value)===correct;show(f,ok?'✅ <strong>Correct.</strong> '+success:'↻ <strong>Try again.</strong> '+retry);if(ok){state[key]=true;updateProgress()}}
+document.getElementById('storyDone').addEventListener('click',()=>{state.story=true;updateProgress();document.getElementById('explore').scrollIntoView({behavior:'smooth'})});
+document.getElementById('whyCheck').addEventListener('click',()=>radioCheck('why',2,'whyFeedback','A deeper sense of purpose can guide decisions, persistence, and professional identity.','Choose the response that connects motivation with professional practice.','why'));
+document.getElementById('checkMatch').addEventListener('click',()=>{const ss=[...document.querySelectorAll('.match-row select')],f=document.getElementById('matchFeedback');if(!ss.every(s=>s.value))return show(f,'⚠️ Complete all four matches first.');const n=ss.filter(s=>s.value===s.dataset.answer).length;show(f,n===4?'✅ <strong>Nice work!</strong> All four chapter questions are matched correctly.':'↻ You matched <strong>'+n+' of 4</strong> correctly. Recheck the question words and try again.');if(n===4){state.match=true;updateProgress()}});
+document.getElementById('resetMatch').addEventListener('click',()=>{document.querySelectorAll('.match-row select').forEach(s=>s.value='');document.getElementById('matchFeedback').classList.remove('show')});
+document.getElementById('familiesCheck').addEventListener('click',()=>radioCheck('families',0,'familiesFeedback','The chapter presents families as essential partners with valuable knowledge and perspectives.','Look for the response based on partnership rather than one-way instruction.','families'));
+document.getElementById('workCheck').addEventListener('click',()=>radioCheck('work',3,'workFeedback','Observation, reflection, responsive planning, and relationship-building are central professional responsibilities.','Choose the response that combines evidence, planning, and relationships.','work'));
+document.getElementById('settingsCheck').addEventListener('click',()=>radioCheck('settings',1,'settingsFeedback','Early childhood professionals work across many settings and schedules, requiring flexibility and responsiveness.','Choose the response that recognizes variation across programs.','settings'));
+document.getElementById('growthCheck').addEventListener('click',()=>radioCheck('growth',0,'growthFeedback','Professional growth combines formal preparation with coaching, networking, reflection, and continuing education.','Choose the pathway that treats learning as ongoing.','growth'));
+document.getElementById('finalCheck').addEventListener('click',()=>radioCheck('final',2,'finalFeedback','The chapter integrates purpose, people, responsibilities, settings, preparation, and lifelong development.','Choose the most complete description of the profession.','final'));
+document.getElementById('compareBtn').addEventListener('click',()=>{document.getElementById('comparePanel').classList.add('show');state.reflect=true;updateProgress();document.getElementById('comparePanel').scrollIntoView({behavior:'smooth',block:'nearest'})});
+document.getElementById('restartBtn').addEventListener('click',()=>location.reload());updateProgress();
+</script>
+<script>
+// Quality-control layer: shuffle complete labels and each matching bank independently.
+(function(){
+  function shuffle(items){
+    for(let i=items.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [items[i],items[j]]=[items[j],items[i]];
+    }
+    return items;
+  }
+  document.querySelectorAll('.options').forEach(group=>{
+    shuffle([...group.querySelectorAll(':scope > label.option')]).forEach(label=>group.appendChild(label));
+  });
+  document.querySelectorAll('select[data-answer]').forEach(select=>{
+    const placeholder=select.querySelector('option[value=""]');
+    shuffle([...select.options].filter(option=>option.value!=="")).forEach(option=>select.appendChild(option));
+    if(placeholder){select.insertBefore(placeholder,select.firstChild);select.value="";}
+  });
+  document.querySelectorAll('.feedback').forEach(region=>{
+    region.setAttribute('role','status');
+    region.setAttribute('aria-live','polite');
+  });
+  const reset=document.getElementById('resetMatch');
+  if(reset){
+    reset.addEventListener('click',()=>{
+      if(typeof state!=="undefined" && Object.prototype.hasOwnProperty.call(state,'match')){
+        state.match=false;
+        const complete=document.getElementById('completeBox');
+        if(complete)complete.classList.remove('show');
+        if(typeof updateProgress==="function")updateProgress();
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
